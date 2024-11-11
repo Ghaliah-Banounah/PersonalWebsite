@@ -1,0 +1,160 @@
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
+
+/* Body color */
+.dark {
+    font-family: "Share Tech Mono", monospace;
+    background-color: #0f172a;
+    overflow-x: hidden;
+}
+
+.light {
+    font-family: "Share Tech Mono", monospace;
+    background-color: #e2e8f0;
+    overflow-x: hidden;
+}
+
+/* Links */
+.dark a {
+    text-decoration: none;
+    font-weight: bold;
+    color: #e2e8f0;
+}
+
+.light a {
+    text-decoration: none;
+    font-weight: bold;
+    color: #0f172a;
+}
+
+.dark a:hover {
+    color: #94a3b8;
+}
+
+.light a:hover {
+    color: #475569;
+}
+
+.dark .linkHover:hover {
+    transform: scale(1.2);
+    transition: all 0.3s;
+}
+
+.light .linkHover:hover {
+    transform: scale(1.2);
+    transition: all 0.3s;
+}
+
+/* Headers */
+
+.dark h1 {
+    color: #e2e8f0;
+}
+
+.light h1 {
+    color: #0f172a;
+}
+
+/* Navbar color */
+.light ul.nav {
+    background: rgba(0, 0, 0, 0.15);
+    backdrop-filter: blur(7px);
+}
+
+.dark ul.nav {
+    background: rgba(255, 255, 255, 0.10);
+    backdrop-filter: blur(7px);
+}
+
+/* Mode icons */
+.light .activeicon {
+    background: rgba(0, 0, 0, 0.29);
+}
+
+.dark .activeicon {
+    background: rgba(255, 255, 255, 0.29);
+}
+
+/* Aurora particles */
+/* Top right */
+.aurora-1 {
+    background-image: linear-gradient(rgba(91, 244, 255, 0.7), rgba(226, 122, 255, 0.7));
+    position: fixed;
+    filter: blur(70px);
+    opacity: 0.5;
+    border-radius: 50%;
+    width: 50em;
+    height: 20em;
+    top: 0%;
+    left: 70%;
+    transform: rotate(45deg);
+    z-index:-1;
+    animation: auroraEffect 5s linear infinite;
+}
+/* Top right */
+.aurora-2 {
+    background-image: linear-gradient(rgba(91, 244, 255, 0.7), rgba(226, 122, 255, 0.7));
+    position: fixed;
+    filter: blur(70px);
+    opacity: 0.5;
+    border-radius: 50%;
+    width: 100em;
+    height: 15em;
+    top: 0%;
+    left: 10%;
+    transform: rotate(-155deg);
+    z-index:-1;
+    animation: auroraEffect 5s linear infinite alternate;
+}
+
+/* Bottom left */
+.aurora-3 {
+    background-image: linear-gradient(rgba(91, 244, 255, 0.7), rgba(226, 122, 255, 0.7));
+    position: fixed;
+    filter: blur(70px);
+    opacity: 0.4;
+    border-radius: 50%;
+    width: 60em;
+    height: 20em;
+    bottom: -10%;
+    right: 70%;
+    transform: rotate(-150deg);
+    z-index:-1;
+    animation: auroraEffect 5s linear infinite alternate;
+}
+/* Top left */
+.aurora-4 {
+    background-image: linear-gradient(rgba(91, 244, 255, 0.7), rgba(226, 122, 255, 0.7));
+    position: fixed;
+    filter: blur(70px);
+    opacity: 0.4;
+    border-radius: 40%;
+    width: 60em;
+    height: 15em;
+    top: 35%;
+    right: 60%;
+    transform: rotate(-125deg);
+    z-index:-1;
+    animation: auroraEffect 5s linear infinite alternate;
+}
+
+/* Bottom right */
+.aurora-5 {
+    background-image: linear-gradient(rgba(91, 244, 255, 0.7), rgba(226, 122, 255, 0.7));
+    position: fixed;
+    filter: blur(70px);
+    opacity: 0.5;
+    border-radius: 50%;
+    width: 50em;
+    height: 15em;
+    bottom: -30%;
+    right: 0;
+    transform: rotate(-155deg);
+    z-index:-1;
+    animation: auroraEffect 5s linear infinite alternate;
+}
+
+@keyframes auroraEffect {
+    0% {filter: hue-rotate(-10deg) blur(45px);}
+    50% {filter: hue-rotate(-60deg) blur(80px);}
+    100% {filter: hue-rotate(-10deg) blur(45px);}
+}
