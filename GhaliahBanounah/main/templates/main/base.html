@@ -20,9 +20,8 @@
 <body class="{% if 'mode' in request.COOKIES and request.COOKIES.mode == 'dark' %}dark{% else %}light{% endif %}">
     <header class="fixed-top">
         <!-- This navbar expands at medium screens, screens smaller than that toggle the collapse property -->
-        <nav
-            class="navbar navbar-expand-md py-2{% if 'mode' in request.COOKIES and request.COOKIES.mode == 'dark' %}navbar-dark{% endif %}">
-            <div class="container p-2 d-flex flex-row gap-5 justify-content-center">
+        <nav class="navbar navbar-expand-md py-2{% if 'mode' in request.COOKIES and request.COOKIES.mode == 'dark' %}navbar-dark{% endif %}">
+            <div class="container p-2 d-flex flex-row justify-content-center">
                 <!-- Brand name -->
                 <a class="d-block text-center d-md-none navbar-brand" href="/">
                     Ghaliah
@@ -57,16 +56,17 @@
                         
                     </ul>
                     <!-- Dark/light mode switch -->
-                    <div class="d-flex align-items-center justify-content-center px-3 gap-1 mb">
+                    <div class="d-flex align-items-center justify-content-center px-4 py-3 mb-3 gap-3 shadow-sm rounded-pill nav">
                         <a href="{% url 'main:modeView' 'light' %}?next={{request.get_full_path|urlencode}}"><span
-                                class="material-symbols-outlined rounded-pill p-1 {% if 'mode' not in request.COOKIES or 'mode' in request.COOKIES and request.COOKIES.mode != 'dark' %}activeicon{% endif %}">light_mode</span></a>
+                                class="material-symbols-outlined rounded-pill {% if 'mode' not in request.COOKIES or 'mode' in request.COOKIES and request.COOKIES.mode != 'dark' %}activeicon{% endif %}">light_mode</span></a>
                         <a href="{% url 'main:modeView' 'dark' %}?next={{request.get_full_path|urlencode}}"><span
-                                class="material-symbols-outlined rounded-pill p-1 {% if 'mode' in request.COOKIES and request.COOKIES.mode == 'dark' %}activeicon{% endif %}">dark_mode</span></a>
+                                class="material-symbols-outlined rounded-pill {% if 'mode' in request.COOKIES and request.COOKIES.mode == 'dark' %}activeicon{% endif %}">dark_mode</span></a>
                     </div>
                 </div>
             </div>
         </nav>
     </header>
+
     <main class="mt-5 pt-5">
     {% block intro %}
 
@@ -76,9 +76,10 @@
 
     {% endblock %}
     </main>
-    <footer class="container border-1 border-top border-secondary-subtle p-5 text-center">
+
+    <footer class="container border-1 border-top border-secondary-subtle mt-5 p-5 text-center">
         <div class="row gap-5">
-            <a class="col" href="https://github.com/Ghaliah-Banounah">
+            <a class="col linkHover" href="https://github.com/Ghaliah-Banounah">
                 {% if 'mode' in request.COOKIES and request.COOKIES.mode == 'dark' %}
                 <img src="{% static 'images/GitHub_Logo_White.png' %}" alt="Github logo" style="max-width: 10em;">
                 {% else %}
@@ -86,24 +87,27 @@
                 {% endif %}
             </a>
             <div class="col d-flex flex-row gap-4 justify-content-evenly align-items-center">
-                <a href="">Home</a>
-                <a href="">Interests</a>
-                <a href="">Projects</a>
-                <a href="">Blog</a>
-                <a href="">Contact</a>
+                <a class="linkHover" href="">Home</a>
+                <a class="linkHover" href="">Interests</a>
+                <a class="linkHover" href="">Projects</a>
+                <a class="linkHover" href="">Blog</a>
+                <a class="linkHover" href="">Contact</a>
             </div>
             
         </div>
         
     </footer>
 
-
     <!-- Aurora particles -->
+    <div class="aurora"></div>
     <div class="aurora-1"></div>
     <div class="aurora-2"></div>
     <div class="aurora-3"></div>
     <div class="aurora-4"></div>
     <div class="aurora-5"></div> 
+    <div class="aurora-6"></div>
+    <div class="aurora-7"></div>
+    <div class="aurora-8"></div>
 
     <!-- Checks form validation -->
     <script>

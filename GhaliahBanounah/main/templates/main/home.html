@@ -2,11 +2,62 @@
 {% load static %}
 
 {% block intro %}
-    <section class="container">
-        <h1>Hello</h1>
+    <section class="container text-center h-50 rounded-5 shadow hero p-3 my-5 align-content-center">
+        <h2>Hello, my name is Ghaliah Banounah</h2>
+        <h4>Full-Stack developer in the making, scroll to know more!</h4>
     </section>
+    <div class="container">
+        <span></span>
+    </div>
 {% endblock %}
 
 {% block content %}
+    <!-- Interests section -->
+    <section class="container justify-content-center block p-3 my-5">
+        <div class="d-flex flex-row justify-content-between mt-5 pt-5">
+            <a href="" class="fw-semibold h2 linkHover">Interests</a>
+            <a href="" class="align-self-center h3 linkHover">More 
+                <span class="material-symbols-outlined">arrow_forward</span>
+            </a>
+        </div>
+        <div class="row row-cols-md-3 justify-content-evenly"> 
+            <!-- Interests loop goes here -->
+            <div class="crd rounded-5 shadow p-3">
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects section -->
+    <section class="container justify-content-center block p-3 my-5">
+        <div class="d-flex flex-row justify-content-between">
+            <a href="" class="fw-semibold h2 linkHover">Projects</a>
+            <a href="" class="align-self-center h3 linkHover">More 
+                <span class="material-symbols-outlined">arrow_forward</span>
+            </a>
+        </div>
+        <div class="row row-cols-md-3 justify-content-evenly"> 
+            <!-- Projects loop goes here -->
+            <div class="crd rounded-5 shadow p-3">
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog section -->
+    <section class="container justify-content-center block p-3 my-5">
+        <div class="d-flex flex-row justify-content-between">
+            <a href="" class="fw-semibold h2 linkHover">From the Blog</a>
+            <a href="" class="align-self-center h3 linkHover">More 
+                <span class="material-symbols-outlined">arrow_forward</span>
+            </a>
+        </div>
+        <div class="row row-cols-md-3 justify-content-evenly"> 
+            <!-- Blog loop goes here -->
+            <div class="crd rounded-5 shadow p-3">
+                
+            </div>
+        </div>
+    </section>
 
 {% endblock %}
