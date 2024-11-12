@@ -6,7 +6,7 @@
 {% block content %}
 <section class="container-fluid text-center">
     <h1 class="display-4 fw-bold my-3">Blog</h1>
-    <div class="row row-cols-1 row-cols-md-2 gap-5 justify-content-evenly">
+    <div class="row row-cols-1 row-cols-md-2 gap-5 justify-content-center">
         {% for post in posts %}
             {% if post.isPublished %}
             <div class="card g-0 border-0 rounded-5 shadow blog-crd overflow-hidden">
