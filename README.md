@@ -35,16 +35,19 @@ A personal website is website that represents you , your work , your career , yo
 - Wireframe (shared as link or uploaded as a file) - You can use Figma or similar online wireframing/design software.
 - UML (shared as a link or uploaded as a file) - You can use Lucid Charts or similar online UML design tool.
 
-## (Project Name)
-(project description here.)
+## Project Name
+Ghaliah Banounah
 
 ## Features List
-- (list of features)
+- Home page
+- 'Display All' page for posts, projects, and interests each
+- Cliking on the the item's title (either Project, Post, or Interest) will take you to details page
+- As the website owner, there's a dashboard to perform CRUD operations on your data
 
 ## User Stories, Wireframes & UML links
 - (User stories document link here.)
 - (wireframe link here.)
-- (UML link here.)
+- UML Link: https://lucid.app/lucidchart/6abdf705-d746-447d-8529-68b2692c2365/edit?viewport_loc=-306%2C777%2C3614%2C1431%2CHWEp-vi-RSFO&invitationId=inv_3cf03776-a447-4c74-97f8-e437880c9fe6
 
 
 ## Resources:
