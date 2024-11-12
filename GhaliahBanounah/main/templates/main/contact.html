@@ -1,0 +1,121 @@
+{% extends 'main/base.html' %}
+{% load static %}
+
+{% block title %}Contact Us{% endblock %}
+
+{% block content %}
+
+<section class="container text-center">
+    <h1 class="display-4 m-4 fw-bold">
+        Get in Touch!
+    </h1>
+    <div class="row row-cols-1 row-cols-lg-2 justify-content-between gap-2">
+        <!-- Contact Info -->
+        <div class="col-10 col-lg-4 align-content-center text-start shadow rounded-5 frm">
+            <h2 class="fw-bold text-center">Contact Information</h2>
+            <div class="px-5 py-2">
+                <div class="d-flex flex-row py-0 gap-2 mt-4">
+                    <i class="text-center material-symbols-outlined">
+                        mail
+                    </i>
+                    <p class="fs-5 fw-semibold m-0">
+                    Email:
+                    </p>
+                </div>
+                <p class="fs-5 mb-2 ps-4">
+                    ghalia.banouna@yahoo.com
+                </p>
+                <div class="d-flex flex-row gap-2 mt-4">
+                    <i class="text-center material-symbols-outlined">
+                        phone_iphone
+                    </i>
+                    <p class="fs-5 fw-semibold m-0">
+                    Phone Number:
+                    </p>
+                </div>
+                <p class="fs-5 mb-2 ps-4">
+                    0557173333
+                </p>
+                <div class="d-flex flex-row gap-2 mt-4">
+                    {% if 'mode' in request.COOKIES and request.COOKIES.mode == 'dark' %}
+                    <img src="{% static 'images/In-White-72.png' %}" style="height: 24px;" alt="Github logo">
+                    {% else %} 
+                    <img src="{% static 'images/linkedin-black.png' %}" style="height: 24px;" alt="Github logo">
+                    {% endif %}
+                    <p class="fs-5 fw-semibold m-0">
+                    Linked in:
+                    </p>
+                </div>
+                <a href="https://www.linkedin.com/in/ghaliah-banounah" class="fs-5 mb-2 ps-4">
+                    /ghaliah-banounah
+                </a>
+                <div class="d-flex flex-row gap-2 mt-4">
+                    {% if 'mode' in request.COOKIES and request.COOKIES.mode == 'dark' %}
+                    <img src="{% static 'images/gitHub-mark-white.png' %}" style="height: 24px;" alt="Github logo">
+                    {% else %} 
+                    <img src="{% static 'images/gitHub-mark.png' %}" style="height: 24px;" alt="Github logo">
+                    {% endif %}
+                    <p class="fs-5 fw-semibold m-0">
+                    Github:
+                    </p>
+                </div>
+                <a href="https://github.com/Ghaliah-Banounah" class="fs-5 mb-2 ps-4">
+                    /Ghaliah-Banounah
+                </a>
+            </div>
+        </div>
+        <!-- Contact Form -->
+        <div class="col-10 col-lg-7 shadow rounded-5 py-3 px-4 frm">
+            <form class="form-floating d-flex flex-column text-start gap-2 mt-3 px-2 needs-validation"
+                action="{% url 'projects:addProjectView' %}" method="post" enctype="multipart/form-data" novalidate>
+                {% csrf_token %}
+                <i class="text-center material-symbols-outlined rounded-pill p-2">
+                    mail
+                </i>
+                <h3 class="fw-bold text-center">Or send a message</h3>
+                <div class="d-flex justify-content-evenly gap-2">
+                    <div class="my-3 flex-fill">
+                        <label for="fname" class="lighttext">First Name</label>
+                        <input type="text" class="form-control focus-ring focus-ring-secondary" placeholder="First Name.."
+                            name="fname" id="fname" required minlength="3" maxlength="256">
+                        <div class="invalid-feedback">
+                            Please enter a valid first name.
+                        </div>
+                    </div>
+                    <div class="my-3 flex-fill">
+                        <label for="lname" class="lighttext">Last Name</label>
+                        <input type="text" class="form-control focus-ring focus-ring-secondary" placeholder="Last Name.."
+                            name="lname" id="lname" required minlength="3" maxlength="256">
+                        <div class="invalid-feedback">
+                            Please enter a valid last name.
+                        </div>
+                    </div>
+                </div>
+                <div class="my-3">
+                    <label for="email" class="lighttext">Email address</label>
+                    <input type="email" class="form-control" id="email" placeholder="name@example.com"
+                        name="email" required maxlength="254">
+                    <div class="invalid-feedback">
+                        Please enter a valid email.
+                    </div>
+                </div>
+                <div class="my-3">
+                    <label for="message">Message</label>
+                    <textarea class="form-control focus-ring focus-ring-secondary" placeholder="Message.."
+                        name="message" id="message" style="height: 100px" required></textarea>
+                    <div class="invalid-feedback">
+                        Please write your message.
+                    </div>
+                </div>
+                <div class="d-flex flex-row justify-content-center">
+                    <button class="col-6 btn border-2 {% if 'mode' in request.COOKIES and request.COOKIES.mode == 'dark' %} btn-outline-light {% else %} btn-outline-dark {% endif %}"
+                        type="submit">
+                        Send
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

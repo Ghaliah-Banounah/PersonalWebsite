@@ -3,6 +3,12 @@ from django.http import HttpRequest
 from interests.models import Interest
 from projects.models import Project
 from posts.models import Post
+from .forms import ContactForm
+from django.core.mail import send_mail
+from GhaliahBanounah import settings
+from django.template.loader import render_to_string
+from django.utils.html import strip_tags
+from datetime import datetime
 
 #Home view
 def homeView(request: HttpRequest):
@@ -12,6 +18,27 @@ def homeView(request: HttpRequest):
     posts = Post.objects.all().order_by('-publishedAt')[0:2]
 
     return render(request, 'main/home.html', context={'interests': interests, 'projects': projects, 'posts': posts})
+
+#Contact view 
+def contactView(request: HttpRequest):
+
+    contactData = ContactForm()
+    response = render(request, 'main/contact.html')
+    
+    if request.method == "POST":
+
+        contactData = ContactForm(request.POST)
+        if contactData.is_valid():
+            contactData.save()
+
+            subject = "Planteer Support"
+            fromEmail = settings.DEFAULT_FROM_EMAIL
+            to = request.POST['email']
+            htmlContent = render_to_string('main/mailTemplate.html', {'reciever': request.POST, 'sentAt': datetime.strftime( datetime.now() , "%d/%m/%Y, %H:%M:%S")})
+            textContent = strip_tags(htmlContent)
+            send_mail(subject, textContent, fromEmail, [to], html_message=htmlContent, fail_silently=False)
+            
+    return response
 
 #Mode change view
 def modeView(request: HttpRequest, mode):
