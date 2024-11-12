@@ -11,9 +11,9 @@
     </h1>
     <div class="row row-cols-1 row-cols-lg-2 justify-content-between gap-2">
         <!-- Contact Info -->
-        <div class="col-10 col-lg-4 align-content-center text-start shadow rounded-5 frm">
+        <div class="col-10 col-lg-5 align-content-center text-start py-3 px-4 shadow rounded-5 frm">
             <h2 class="fw-bold text-center">Contact Information</h2>
-            <div class="px-5 py-2">
+            <div class="py-3 px-4">
                 <div class="d-flex flex-row py-0 gap-2 mt-4">
                     <i class="text-center material-symbols-outlined">
                         mail
@@ -65,11 +65,17 @@
             </div>
         </div>
         <!-- Contact Form -->
-        <div class="col-10 col-lg-7 shadow rounded-5 py-3 px-4 frm">
+        <div class="col-10 col-lg-6 shadow rounded-5 py-3 px-4 frm">
+            {% if request.method == 'POST' %}
+            <i class="text-center material-symbols-outlined">
+                mail
+            </i>
+            <h2 class="p-2 m-2 py-lg-5 m-lg-5" >Your message was sent successfully</h2>
+            {% else %}
             <form class="form-floating d-flex flex-column text-start gap-2 mt-3 px-2 needs-validation"
-                action="{% url 'projects:addProjectView' %}" method="post" enctype="multipart/form-data" novalidate>
+                action="{% url 'main:contactView' %}" method="post" enctype="multipart/form-data" novalidate>
                 {% csrf_token %}
-                <i class="text-center material-symbols-outlined rounded-pill p-2">
+                <i class="text-center material-symbols-outlined">
                     mail
                 </i>
                 <h3 class="fw-bold text-center">Or send a message</h3>
@@ -114,6 +120,7 @@
                     </button>
                 </div>
             </form>
+            {% endif %}
         </div>
     </div>
 </section>

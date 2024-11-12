@@ -56,11 +56,11 @@
                         
                     </ul>
                     <!-- Dark/light mode switch -->
-                    <div class="d-flex align-items-center justify-content-center px-4 py-3 mb-3 gap-3 shadow-sm rounded-pill nav">
+                    <div class="d-flex align-items-center justify-content-center px-3 py-2 mb-3 gap-3 shadow-sm rounded-pill nav">
                         <a href="{% url 'main:modeView' 'light' %}?next={{request.get_full_path|urlencode}}"><span
-                                class="material-symbols-outlined rounded-pill linkHover {% if 'mode' not in request.COOKIES or 'mode' in request.COOKIES and request.COOKIES.mode != 'dark' %}activeicon{% endif %}">light_mode</span></a>
+                                class="material-symbols-outlined rounded-pill p-1 linkHover {% if 'mode' not in request.COOKIES or 'mode' in request.COOKIES and request.COOKIES.mode != 'dark' %}activeicon{% endif %}">light_mode</span></a>
                         <a href="{% url 'main:modeView' 'dark' %}?next={{request.get_full_path|urlencode}}"><span
-                                class="material-symbols-outlined rounded-pill linkHover {% if 'mode' in request.COOKIES and request.COOKIES.mode == 'dark' %}activeicon{% endif %}">dark_mode</span></a>
+                                class="material-symbols-outlined rounded-pill p-1 linkHover {% if 'mode' in request.COOKIES and request.COOKIES.mode == 'dark' %}activeicon{% endif %}">dark_mode</span></a>
                     </div>
                 </div>
             </div>
