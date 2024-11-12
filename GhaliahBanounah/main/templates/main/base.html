@@ -20,11 +20,11 @@
 <body class="{% if 'mode' in request.COOKIES and request.COOKIES.mode == 'dark' %}dark{% else %}light{% endif %}">
     <header class="fixed-top">
         <!-- This navbar expands at medium screens, screens smaller than that toggle the collapse property -->
-        <nav class="navbar navbar-expand-md py-2{% if 'mode' in request.COOKIES and request.COOKIES.mode == 'dark' %}navbar-dark{% endif %}">
+        <nav class="navbar navbar-expand-md py-2 {% if 'mode' in request.COOKIES and request.COOKIES.mode == 'dark' %}navbar-dark{% endif %}">
             <div class="container p-2 d-flex flex-row justify-content-center">
                 <!-- Brand name -->
-                <a class="d-block text-center d-md-none navbar-brand" href="/">
-                    Ghaliah
+                <a class="d-block text-center fs-3 px-4 d-md-none navbar-brand" href="/">
+                    Ghaliah Banounah
                 </a>
                 <!-- Toggle button to display navbar on small screens -->
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -45,7 +45,7 @@
                             <a href="">Interests</a>
                         </li>
                         <li class="nav-item linkHover">
-                            <a href="">Projects</a>
+                            <a href="{% url 'projects:displayProjectsView' %}">Projects</a>
                         </li>
                         <li class="nav-item linkHover">
                             <a href="{% url 'posts:blogView' %}">Blog</a>
@@ -89,7 +89,7 @@
             <div class="col d-flex flex-row gap-4 justify-content-evenly align-items-center">
                 <a class="linkHover" href="{% url 'main:homeView' %}">Home</a>
                 <a class="linkHover" href="">Interests</a>
-                <a class="linkHover" href="">Projects</a>
+                <a class="linkHover" href="{% url 'projects:displayProjectsView' %}">Projects</a>
                 <a class="linkHover" href="{% url 'posts:blogView' %}">Blog</a>
                 <a class="linkHover" href="">Contact</a>
             </div>
