@@ -1,11 +1,11 @@
 {% extends 'main/base.html' %}
 {% load static %}
 
-{% block title %}All Posts{% endblock %}
+{% block title %}Blog{% endblock %}
 
 {% block content %}
 <section class="container text-center">
-    <h1 class="fw-bold my-3">Blog</h1>
+    <h1 class="display-4 fw-bold my-3">Blog</h1>
     <div class="row row-cols-1 row-cols-md-2 gap-5 justify-content-evenly">
         {% for post in posts %}
             {% if post.isPublished %}

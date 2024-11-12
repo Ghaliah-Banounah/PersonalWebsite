@@ -329,7 +329,7 @@
         backdrop-filter: blur(7px);
         max-width: 100%;
     }
-    
+
     .light .hero {
         background: rgba(68, 68, 68, 0.15);
         font-size: 1rem;
@@ -344,7 +344,7 @@
         backdrop-filter: blur(7px);
         max-width: 80%;
     }
-    
+
     .light .hero {
         background: rgba(68, 68, 68, 0.15);
         backdrop-filter: blur(7px);
@@ -360,7 +360,7 @@
         max-width: 70%;
         min-height: 55%;
     }
-    
+
     .light .hero {
         background: rgba(68, 68, 68, 0.15);
         backdrop-filter: blur(7px);
