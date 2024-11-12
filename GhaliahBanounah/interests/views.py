@@ -1,3 +1,19 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
+from django.http import HttpRequest
+from .forms import InterestForm
 
-# Create your views here.
+# Add interest
+def addInterestView(request: HttpRequest):
+
+    interestData = InterestForm()
+
+    response = render(request, 'interests/addInterest.html')
+    
+    if request.method == "POST":
+        interestData = InterestForm(request.POST, request.FILES)
+        if interestData.is_valid():
+            interestData.save()
+            
+        response = redirect('main:homeView')
+        
+    return response

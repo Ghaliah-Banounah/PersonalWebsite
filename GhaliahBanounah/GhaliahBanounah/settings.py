@@ -40,7 +40,8 @@ INSTALLED_APPS = [
     'main',
     'projects',
     'interests',
-    'posts'
+    'posts',
+    'dashboard'
 ]
 
 MIDDLEWARE = [

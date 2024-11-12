@@ -49,14 +49,16 @@
 .dark h1,
 .dark h2,
 .dark h3,
-.dark h4 {
+.dark h4,
+.dark p {
     color: #e2e8f0;
 }
 
 .light h1,
 .light h2,
 .light h3,
-.light h4 {
+.light h4, 
+.light p {
     color: #0f172a;
 }
 
@@ -351,11 +353,82 @@
 .dark .crd {
     background: rgba(255, 255, 255, 0.10);
     backdrop-filter: blur(7px);
-    max-height: 40%;
+    max-height: 15rem;
+    max-width: 20rem;
+    /* background-repeat: no-repeat;
+    background-position: top;
+    background-size: cover;
+    position: relative; */
 }
 
 .light .crd {
     background: rgba(0, 0, 0, 0.15);
     backdrop-filter: blur(7px);
-    max-height: 40%;
+    max-height: 15rem;
+    max-width: 20rem;
+    /* background-repeat: no-repeat;
+    background-position: top;
+    background-size: cover;
+    position: relative; */
+}
+
+/* 
+.overlay {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.6));
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    transition: 0.5s;
+}
+
+.overlay > p {
+    color: #e2e8f0;
+    opacity: 1;
+}
+
+/* .overlay > a {
+    transform: translateY(25px);
+    transition: all 0.5s;
+    color: #e2e8f0;
+}
+
+.overlay:hover > a {
+    transform: translateY(0px);
+}
+
+.overlay:hover > p {
+    opacity: 1;
+    transition: all 0.5s;
+} */ */
+
+/* Form style */
+.light .frm {
+    background: rgba(0, 0, 0, 0.15);
+    backdrop-filter: blur(7px);
+}
+
+.dark .frm {
+    background: rgba(255, 255, 255, 0.10);
+    backdrop-filter: blur(7px);
+}
+
+.dark label {
+    color: #e2e8f0;
+}
+
+.light label {
+    color: #0f172a;
+}
+
+/* Icons */
+.dark i {
+    color: #e2e8f0;
+}
+
+.light i {
+    color: #0f172a;
 }
