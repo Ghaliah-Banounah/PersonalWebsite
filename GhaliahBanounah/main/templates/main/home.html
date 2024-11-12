@@ -2,28 +2,42 @@
 {% load static %}
 
 {% block intro %}
-<section class="container text-center h-50 rounded-5 shadow hero p-3 my-5 align-content-center">
-    <h2>Hello, my name is Ghaliah Banounah</h2>
-    <h4>Full-Stack developer in the making, scroll down to know more!</h4>
+<section class="container-md rounded-5 shadow hero my-5 align-content-center justify-content-center">
+    <div class="row text-start justify-content-center p-4">
+        <div class="col align-content-center">
+            <h3 class="mb-3">Hello, my name is Ghaliah Banounah</h3>
+            <div class="overflow-hidden">
+                <p class="typed-out mb-0 lead">Full-Stack developer in the making..</p>
+                <p class="typed-out-2">Scroll down to know more!</p>
+            </div>
+        </div>
+        <div class="col col-md-5">
+            <img src="{% static 'images/code.png' %}" alt="code image" class="p-4">
+        </div>
+    </div>
 </section>
-<div class="container">
-    <span></span>
+
+<div class="container mt-3 justify-content-center text-center">
+    <p class="mb-1">Scroll</p>
+    <i class="material-symbols-outlined">
+        keyboard_double_arrow_down
+    </i>
 </div>
 {% endblock %}
 
 {% block content %}
 <!-- Interests section -->
-<section class="container justify-content-center block p-3 my-5">
-    <div class="d-flex flex-row justify-content-between mt-5 pt-5">
+<section class="container-md my-5">
+    <div class="d-flex flex-row justify-content-between mt-5 pt-5 block">
         <a href="" class="fw-semibold h2 linkHover">Interests</a>
         <a href="" class="align-self-center h3 linkHover">More
             <span class="material-symbols-outlined">arrow_forward</span>
         </a>
     </div>
-    <div class="row row-cols-md-3 g-0 justify-content-evenly">
+    <div class="row row-cols-md-3 justify-content-evenly">
         <!-- Interests loop goes here -->
         {% for interest in interests %}
-        <div class="card h-auto crd rounded-5 border-0 shadow overflow-hidden">
+        <div class="col-lg-4 card g-0 rounded-5 border-0 shadow overflow-hidden m-2 block crd">
             <img src="{{interest.picture.url}}" class="card-img-top object-fit-cover h-75" alt="interest Picture">
             <div class="card-body">
                 <a href="" class="h4">{{interest.title}}</a>
@@ -34,8 +48,8 @@
 </section>
 
 <!-- Projects section -->
-<section class="container justify-content-center block p-3 my-5">
-    <div class="d-flex flex-row justify-content-between">
+<section class="container-md my-5">
+    <div class="d-flex flex-row justify-content-between mt-5 pt-5 block">
         <a href="" class="fw-semibold h2 linkHover">Projects</a>
         <a href="" class="align-self-center h3 linkHover">More
             <span class="material-symbols-outlined">arrow_forward</span>
@@ -43,25 +57,35 @@
     </div>
     <div class="row row-cols-md-3 justify-content-evenly">
         <!-- Projects loop goes here -->
-        <div class="crd rounded-5 shadow p-3">
-
+        {% for project in projects %}
+        <div class="col-lg-4 card g-0 rounded-5 border-0 shadow overflow-hidden m-2 block crd">
+            <img src="{{project.picture.url}}" class="card-img-top object-fit-cover h-75" alt="project Picture">
+            <div class="card-body">
+                <a href="" class="h4">{{project.title}}</a>
+            </div>
         </div>
+        {% endfor %}
     </div>
 </section>
 
 <!-- Blog section -->
-<section class="container justify-content-center block p-3 my-5">
-    <div class="d-flex flex-row justify-content-between">
+<section class="container-md my-5">
+    <div class="d-flex flex-row justify-content-between mt-5 pt-5 block">
         <a href="" class="fw-semibold h2 linkHover">From the Blog</a>
         <a href="" class="align-self-center h3 linkHover">More
             <span class="material-symbols-outlined">arrow_forward</span>
         </a>
     </div>
     <div class="row row-cols-md-3 justify-content-evenly">
-        <!-- Blog loop goes here -->
-        <div class="crd rounded-5 shadow p-3">
-
+        <!-- Projects loop goes here -->
+        {% for post in posts %}
+        <div class="col-lg-4 card g-0 rounded-5 border-0 shadow overflow-hidden m-2 block crd">
+            <img src="{{post.picture.url}}" class="card-img-top object-fit-cover h-75" alt="post Picture">
+            <div class="card-body">
+                <a href="" class="h4">{{post.title}}</a>
+            </div>
         </div>
+        {% endfor %}
     </div>
 </section>
 

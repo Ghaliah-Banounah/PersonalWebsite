@@ -57,7 +57,7 @@
 .light h1,
 .light h2,
 .light h3,
-.light h4, 
+.light h4,
 .light p {
     color: #0f172a;
 }
@@ -319,17 +319,94 @@
 
 /* Home styling */
 /* Hero */
-.dark .hero {
-    background: rgba(255, 255, 255, 0.10);
-    backdrop-filter: blur(7px);
-    max-width: 65%;
+
+@media only screen and (min-width: 600px) {
+    .dark .hero {
+        background: rgba(255, 255, 255, 0.10);
+        font-size: 1rem;
+        backdrop-filter: blur(7px);
+        max-width: 100%;
+    }
+    
+    .light .hero {
+        background: rgba(68, 68, 68, 0.15);
+        font-size: 1rem;
+        backdrop-filter: blur(7px);
+        max-width: 100%;
+    }
 }
 
-.light .hero {
-    background: rgba(0, 0, 0, 0.15);
-    backdrop-filter: blur(7px);
-    max-width: 65%;
+@media only screen and (max-width: 600px) {
+    .dark .hero {
+        background: rgba(255, 255, 255, 0.10);
+        backdrop-filter: blur(7px);
+        max-width: 80%;
+    }
+    
+    .light .hero {
+        background: rgba(68, 68, 68, 0.15);
+        backdrop-filter: blur(7px);
+        max-width: 80%;
+    }
 }
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+    .dark .hero {
+        background: rgba(255, 255, 255, 0.10);
+        backdrop-filter: blur(7px);
+        max-width: 70%;
+        min-height: 55%;
+    }
+    
+    .light .hero {
+        background: rgba(68, 68, 68, 0.15);
+        backdrop-filter: blur(7px);
+        max-width: 70%;
+        min-height: 55%;
+    }
+}
+
+
+.hero img {
+    max-height: 250px;
+    max-width: 250px;
+}
+
+.typed-out {
+    overflow: hidden;
+    border-right: .15em solid transparent;
+    white-space: nowrap;
+    width: 0%;
+    height: fit-content;
+    animation:
+        typing 3s steps(20, end) forwards,
+        cursor .4s step-end 6 alternate;
+}
+
+.typed-out-2 {
+    overflow: hidden;
+    border-right: .15em solid transparent;
+    white-space: nowrap;
+    width: 0%;
+    height: fit-content;
+    animation:
+        typing 3s steps(20, end) 3.6s forwards,
+        cursor .4s step-end 3s 5 alternate;
+}
+
+@keyframes cursor {
+    50% {
+        border-color: rgba(0, 0, 0, 0.34);
+    }
+}
+
+@keyframes typing {
+    to {
+        width: 100%
+    }
+}
+
 
 /* Animate on scroll */
 @keyframes appear {
@@ -354,56 +431,15 @@
     background: rgba(255, 255, 255, 0.10);
     backdrop-filter: blur(7px);
     max-height: 15rem;
-    max-width: 20rem;
-    /* background-repeat: no-repeat;
-    background-position: top;
-    background-size: cover;
-    position: relative; */
+    max-width: 18rem;
 }
 
 .light .crd {
     background: rgba(0, 0, 0, 0.15);
     backdrop-filter: blur(7px);
     max-height: 15rem;
-    max-width: 20rem;
-    /* background-repeat: no-repeat;
-    background-position: top;
-    background-size: cover;
-    position: relative; */
+    max-width: 18rem;
 }
-
-/* 
-.overlay {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.6));
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    transition: 0.5s;
-}
-
-.overlay > p {
-    color: #e2e8f0;
-    opacity: 1;
-}
-
-/* .overlay > a {
-    transform: translateY(25px);
-    transition: all 0.5s;
-    color: #e2e8f0;
-}
-
-.overlay:hover > a {
-    transform: translateY(0px);
-}
-
-.overlay:hover > p {
-    opacity: 1;
-    transition: all 0.5s;
-} */ */
 
 /* Form style */
 .light .frm {
