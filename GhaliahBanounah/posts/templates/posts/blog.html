@@ -1,0 +1,24 @@
+{% extends 'main/base.html' %}
+{% load static %}
+
+{% block title %}All Posts{% endblock %}
+
+{% block content %}
+<section class="container text-center">
+    <h1 class="fw-bold my-3">Blog</h1>
+    <div class="row row-cols-1 row-cols-md-2 gap-5 justify-content-evenly">
+        {% for post in posts %}
+            {% if post.isPublished %}
+            <div class="card g-0 border-0 rounded-5 shadow blog-crd overflow-hidden">
+                <div class="card-body">
+                    <a class="card-title h3">{{post.title}}</a>
+                    <p class="card-text text-start mt-4">{{post.content}}</p>
+                    <p class="card-text text-start small">Published at: {{post.publishedAt}}</p>
+                </div>
+                <img src="{{post.picture.url}}" class="card-img-bottom object-fit-cover h-50" alt="post image">
+            </div>
+            {% endif %}
+        {% endfor %}
+    </div>
+</section>
+{% endblock %}

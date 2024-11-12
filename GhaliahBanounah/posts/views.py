@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
 from django.http import HttpRequest
+from .models import Post
 from .forms import PostForm
 
 # Add post
@@ -16,4 +17,12 @@ def addPostView(request: HttpRequest):
             
         response = redirect('main:homeView')
         
+    return response
+
+def blogView(request: HttpRequest):
+
+    posts = Post.objects.all().order_by('-publishedAt')
+    response = render(request, 'posts/blog.html', context={'posts': posts})
+
+
     return response

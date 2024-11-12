@@ -39,7 +39,7 @@
                     <!-- Links -->
                     <ul class="navbar-nav gap-4 px-5 py-3 mb-3 align-items-center shadow-sm rounded-pill nav">
                         <li class="nav-item linkHover">
-                            <a href="">Home</a>
+                            <a href="{% url 'main:homeView' %}">Home</a>
                         </li>
                         <li class="nav-item linkHover">
                             <a href="">Interests</a>
@@ -48,7 +48,7 @@
                             <a href="">Projects</a>
                         </li>
                         <li class="nav-item linkHover">
-                            <a href="">Blog</a>
+                            <a href="{% url 'posts:blogView' %}">Blog</a>
                         </li>
                         <li class="nav-item linkHover">
                             <a href="">Contact</a>
@@ -58,9 +58,9 @@
                     <!-- Dark/light mode switch -->
                     <div class="d-flex align-items-center justify-content-center px-4 py-3 mb-3 gap-3 shadow-sm rounded-pill nav">
                         <a href="{% url 'main:modeView' 'light' %}?next={{request.get_full_path|urlencode}}"><span
-                                class="material-symbols-outlined rounded-pill {% if 'mode' not in request.COOKIES or 'mode' in request.COOKIES and request.COOKIES.mode != 'dark' %}activeicon{% endif %}">light_mode</span></a>
+                                class="material-symbols-outlined rounded-pill linkHover {% if 'mode' not in request.COOKIES or 'mode' in request.COOKIES and request.COOKIES.mode != 'dark' %}activeicon{% endif %}">light_mode</span></a>
                         <a href="{% url 'main:modeView' 'dark' %}?next={{request.get_full_path|urlencode}}"><span
-                                class="material-symbols-outlined rounded-pill {% if 'mode' in request.COOKIES and request.COOKIES.mode == 'dark' %}activeicon{% endif %}">dark_mode</span></a>
+                                class="material-symbols-outlined rounded-pill linkHover {% if 'mode' in request.COOKIES and request.COOKIES.mode == 'dark' %}activeicon{% endif %}">dark_mode</span></a>
                     </div>
                 </div>
             </div>
@@ -87,10 +87,10 @@
                 {% endif %}
             </a>
             <div class="col d-flex flex-row gap-4 justify-content-evenly align-items-center">
-                <a class="linkHover" href="">Home</a>
+                <a class="linkHover" href="{% url 'main:homeView' %}">Home</a>
                 <a class="linkHover" href="">Interests</a>
                 <a class="linkHover" href="">Projects</a>
-                <a class="linkHover" href="">Blog</a>
+                <a class="linkHover" href="{% url 'posts:blogView' %}">Blog</a>
                 <a class="linkHover" href="">Contact</a>
             </div>
             

@@ -50,7 +50,8 @@
 .dark h2,
 .dark h3,
 .dark h4,
-.dark p {
+.dark p,
+.dark small {
     color: #e2e8f0;
 }
 
@@ -58,7 +59,8 @@
 .light h2,
 .light h3,
 .light h4,
-.light p {
+.light p,
+.light small {
     color: #0f172a;
 }
 
@@ -467,4 +469,19 @@
 
 .light i {
     color: #0f172a;
+}
+
+/* Blog styling */
+.dark .blog-crd {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(7px);
+    max-height: 25rem;
+    max-width: 35rem;
+}
+
+.light .blog-crd {
+    background: rgba(0, 0, 0, 0.15);
+    backdrop-filter: blur(7px);
+    max-height: 25rem;
+    max-width: 35rem;
 }
