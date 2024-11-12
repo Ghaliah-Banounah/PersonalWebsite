@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from django.http import HttpRequest
 from .forms import InterestForm
+from .models import Interest
 
 # Add interest
 def addInterestView(request: HttpRequest):
@@ -16,4 +17,12 @@ def addInterestView(request: HttpRequest):
             
         response = redirect('main:homeView')
         
+    return response
+
+def displayInterestsView(request: HttpRequest):
+
+    interests = Interest.objects.all().order_by('-createdAt')
+
+    response = render(request, 'interests/displayInterests.html', context={'interests': interests})
+
     return response

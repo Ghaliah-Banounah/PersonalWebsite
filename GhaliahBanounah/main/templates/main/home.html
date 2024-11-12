@@ -50,8 +50,8 @@
 <!-- Interests section -->
 <section class="container-md my-5">
     <div class="d-flex flex-row justify-content-between mt-5 pt-5 block">
-        <a href="" class="fw-semibold h2 linkHover">Interests</a>
-        <a href="" class="align-self-center h3 linkHover">More
+        <a href="{% url 'interests:displayInterestsView' %}" class="fw-semibold h2 linkHover">Interests</a>
+        <a href="{% url 'interests:displayInterestsView' %}" class="align-self-center h3 linkHover">More
             <span class="material-symbols-outlined">arrow_forward</span>
         </a>
     </div>
@@ -79,12 +79,14 @@
     <div class="row row-cols-md-3 justify-content-evenly">
         <!-- Posts loop goes here -->
         {% for post in posts %}
-        <div class="card g-0 rounded-5 border-0 shadow overflow-hidden m-2 block crd text-center">
-            <img src="{{post.picture.url}}" class="card-img-top object-fit-cover h-75" alt="post Picture">
-            <div class="card-body">
-                <a href="" class="h4">{{post.title}}</a>
+            {% if post.isPublished %}
+            <div class="card g-0 rounded-5 border-0 shadow overflow-hidden m-2 block crd text-center">
+                <img src="{{post.picture.url}}" class="card-img-top object-fit-cover h-75" alt="post Picture">
+                <div class="card-body">
+                    <a href="" class="h4">{{post.title}}</a>
+                </div>
             </div>
-        </div>
+            {% endif %}
         {% endfor %}
     </div>
 </section>

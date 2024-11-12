@@ -487,14 +487,14 @@
 }
 
 /* Projects diplay styling */
-.light .prj-crd {
+.light .sm-crd {
     background: rgba(0, 0, 0, 0.15);
     backdrop-filter: blur(7px);
     max-height: 28rem;
     max-width: 30rem;
 }
 
-.dark .prj-crd {
+.dark .sm-crd {
     background: rgba(255, 255, 255, 0.15);
     backdrop-filter: blur(7px);
     max-height: 28rem;
