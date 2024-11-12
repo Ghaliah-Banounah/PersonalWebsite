@@ -1,21 +1,21 @@
 {% extends 'main/base.html' %}
 {% load static %}
 
-{% block title %}Add Interest{% endblock %}
+{% block title %}Add Projects{% endblock %}
 
 {% block content %}
 
 <section class="container-md text-center">
     <h1 class="m-4">
-        Add Interest
+        Add Project
     </h1>
     <div class="row justify-content-center">
         <div class="col-10 col-lg-6 shadow rounded-5 py-3 px-4 frm">
             <form class="form-floating d-flex flex-column text-start gap-2 mt-3 px-2 needs-validation"
-                action="{% url 'interests:addInterestView' %}" method="post" enctype="multipart/form-data" novalidate>
+                action="{% url 'projects:addProjectView' %}" method="post" enctype="multipart/form-data" novalidate>
                 {% csrf_token %}
                 <i class="text-center material-symbols-outlined rounded-pill p-2">
-                    palette
+                    topic
                 </i>
                 <div class="mb-3">
                     <label for="title">Title</label>
@@ -31,7 +31,23 @@
                     <textarea class="form-control focus-ring focus-ring-secondary" placeholder="Description.."
                         name="description" id="description" style="height: 100px" required></textarea>
                     <div class="invalid-feedback">
-                        Please write the interest's description.
+                        Please write the projects's description.
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="challenges">Challenges</label>
+                    <textarea class="form-control focus-ring focus-ring-secondary" placeholder="Challenges.."
+                        name="challenges" id="challenges" style="height: 100px" required></textarea>
+                    <div class="invalid-feedback">
+                        Please write the projects's challenges.
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="pathTo">Path to Repository</label>
+                    <input type="text" class="form-control focus-ring focus-ring-secondary" placeholder="https://github.com/Ghaliah-Banounah/example"
+                        name="pathTo" id="pathTo" required minlength="15" maxlength="515">
+                    <div class="invalid-feedback">
+                        Please enter a valid url path.
                     </div>
                 </div>
                 <div class="mb-3 text-start">
