@@ -92,9 +92,9 @@
     opacity: 0.5;
     width: 5em;
     height: 20em;
-    top: 10%;
+    bottom: 10%;
     left: -8%;
-    transform: rotate(-35deg);
+    transform: rotate(15deg);
     z-index: -1;
     animation: auroraEffect 8s linear infinite alternate;
 }
@@ -106,9 +106,9 @@
     opacity: 0.5;
     width: 5em;
     height: 20em;
-    top: 3%;
+    bottom: 3%;
     left: -5%;
-    transform: rotate(-35deg);
+    transform: rotate(15deg);
     z-index: -1;
     animation: auroraEffect 8s linear 0.6s infinite alternate;
 }
@@ -120,9 +120,9 @@
     opacity: 0.5;
     width: 5em;
     height: 25em;
-    top: -5%;
+    bottom: -5%;
     left: 0%;
-    transform: rotate(-35deg);
+    transform: rotate(15deg);
     z-index: -1;
     animation: auroraEffect 5s linear 1s infinite alternate;
 }
@@ -134,9 +134,9 @@
     opacity: 0.5;
     width: 5em;
     height: 27em;
-    top: -8%;
+    bottom: -8%;
     left: 5%;
-    transform: rotate(-35deg);
+    transform: rotate(15deg);
     z-index: -1;
     animation: auroraEffect 5s linear 1.5s infinite alternate;
 }
@@ -148,9 +148,9 @@
     opacity: 0.5;
     width: 5em;
     height: 28em;
-    top: -12%;
+    bottom: -12%;
     left: 8%;
-    transform: rotate(-35deg);
+    transform: rotate(15deg);
     z-index: -1;
     animation: auroraEffect 5s linear 1s infinite alternate;
 }
@@ -162,9 +162,9 @@
     opacity: 0.5;
     width: 5em;
     height: 25em;
-    top: -16%;
+    bottom: -16%;
     left: 12%;
-    transform: rotate(-35deg);
+    transform: rotate(15deg);
     z-index: -1;
     animation: auroraEffect 5s linear 0.5s infinite alternate;
 }
@@ -176,9 +176,9 @@
     opacity: 0.5;
     width: 5em;
     height: 28em;
-    top: -20%;
+    bottom: -20%;
     left: 16%;
-    transform: rotate(-35deg);
+    transform: rotate(15deg);
     z-index: -1;
     animation: auroraEffect 5s linear infinite alternate;
 }
@@ -190,9 +190,9 @@
     opacity: 0.5;
     width: 5em;
     height: 22em;
-    top: -25%;
+    bottom: -25%;
     left: 20%;
-    transform: rotate(-35deg);
+    transform: rotate(15deg);
     z-index: -1;
     animation: auroraEffect 5s linear 1.5s infinite alternate;
 }
@@ -204,9 +204,9 @@
     opacity: 0.5;
     width: 5em;
     height: 18em;
-    top: -27%;
+    bottom: -27%;
     left: 24%;
-    transform: rotate(-35deg);
+    transform: rotate(15deg);
     z-index: -1;
     animation: auroraEffect 5s linear 1.5s infinite alternate;
 }
@@ -215,31 +215,31 @@
     0% {
         filter: hue-rotate(-60deg) blur(80px);
         transform: translate(0%, 0%);
-        transform: rotate(-35deg);
+        transform: rotate(15deg);
     }
 
     25% {
         filter: hue-rotate(-10deg) blur(25px);
-        transform: translate(-5%, -5%);
-        transform: rotate(-35deg);
+        transform: translate(-10%, -10%);
+        transform: rotate(15deg);
     }
 
     50% {
         filter: hue-rotate(-60deg) blur(50px);
-        transform: translate(0%, 0%);
-        transform: rotate(-35deg);
+        transform: translate(-20%, -20%);
+        transform: rotate(15deg);
     }
 
     75% {
         filter: hue-rotate(-10deg) blur(20px);
-        transform: translate(5%, 5%);
-        transform: rotate(-35deg);
+        transform: translate(-30%, -30%);
+        transform: rotate(15deg);
     }
 
     100% {
         filter: hue-rotate(-40deg) blur(50px);
-        transform: translate(10%, 10%);
-        transform: rotate(-35deg);
+        transform: translate(-40%, -40%);
+        transform: rotate(15deg);
     }
 }
 

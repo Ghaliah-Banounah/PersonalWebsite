@@ -42,10 +42,10 @@
                             <a href="{% url 'main:homeView' %}">Home</a>
                         </li>
                         <li class="nav-item linkHover">
-                            <a href="{% url 'interests:displayInterestsView' %}">Interests</a>
+                            <a href="{% url 'projects:displayProjectsView' %}">Projects</a>
                         </li>
                         <li class="nav-item linkHover">
-                            <a href="{% url 'projects:displayProjectsView' %}">Projects</a>
+                            <a href="{% url 'interests:displayInterestsView' %}">Interests</a>
                         </li>
                         <li class="nav-item linkHover">
                             <a href="{% url 'posts:blogView' %}">Blog</a>
@@ -88,15 +88,15 @@
             </a>
             <div class="col d-flex flex-row gap-4 justify-content-evenly align-items-center">
                 <a class="linkHover" href="{% url 'main:homeView' %}">Home</a>
-                <a class="linkHover" href="{% url 'interests:displayInterestsView' %}">Interests</a>
                 <a class="linkHover" href="{% url 'projects:displayProjectsView' %}">Projects</a>
+                <a class="linkHover" href="{% url 'interests:displayInterestsView' %}">Interests</a>
                 <a class="linkHover" href="{% url 'posts:blogView' %}">Blog</a>
                 <a class="linkHover" href="{% url 'main:contactView' %}">Contact</a>
             </div>
         </div>
     </footer>
 
-    <!-- Aurora particles (top-left) -->
+    <!-- Aurora particles (bottom-left) -->
     <div class="aurora"></div>
     <div class="aurora-1"></div>
     <div class="aurora-2"></div>
