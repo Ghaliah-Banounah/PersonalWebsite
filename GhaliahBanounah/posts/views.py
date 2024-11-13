@@ -15,7 +15,7 @@ def addPostView(request: HttpRequest):
         if postData.is_valid():
             postData.save()
             
-        response = redirect('main:homeView')
+        response = redirect('dashboard:homeView')
         
     return response
 

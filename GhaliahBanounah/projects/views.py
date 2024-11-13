@@ -15,7 +15,7 @@ def addProjectView(request: HttpRequest):
         if projectData.is_valid():
             projectData.save()
             
-        response = redirect('main:homeView')
+        response = redirect('dashboard:homeView')
         
     return response
 

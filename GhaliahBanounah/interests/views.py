@@ -15,7 +15,7 @@ def addInterestView(request: HttpRequest):
         if interestData.is_valid():
             interestData.save()
             
-        response = redirect('main:homeView')
+        response = redirect('dashboard:homeView')
         
     return response
 

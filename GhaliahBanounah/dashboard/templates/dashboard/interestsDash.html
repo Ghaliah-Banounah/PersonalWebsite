@@ -4,37 +4,42 @@
 {% block title %}Interests Dashboard{% endblock %}
 
 {% block content %}
-<h1 class="text-3xl font-bold m-5">Interests</h1>
+<h1 class="text-4xl font-bold m-5">Interests</h1>
 <div class="container bg-white rounded-lg shadow-md my-12 pt-5 overflow-x-scroll">
-    <!-- Search and filter form -->
-    <form action="{% url 'dashboard:interestsDashView' %}" class="justify-items-end px-2">
-        <div class="flex items-center border-b border-violet-500 py-2">
-            <input
-                class="peer appearance-none bg-transparent rounded-lg border-2 border-violet-200 text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none"
-                type="search" placeholder="Search" aria-label="Search" name="search" value="{{request.GET.search}}">
-            <div class="flex content-center font-bold mx-3">
-                <p class="text-violet-800 w-24">Filter by:</p>
-                <label class="flex flex-col md:flex-row items-center text-gray-500 mx-2">
-                    <input class="mr-1 leading-tight" type="radio" name="orderby" value="latest" 
-                    {% if request.GET.orderby == 'latest' %} checked {% endif %}>
-                    <span class="text-sm">
-                        Latest
-                    </span>
-                </label>
-                <label class="flex flex-col md:flex-row items-center text-gray-500 mx-2">
-                    <input class="mr-1 leading-tight" type="radio" name="orderby" value="oldest"
-                    {% if request.GET.orderby == 'oldest' %} checked {% endif %}>
-                    <span class="text-sm">
-                        Oldest
-                    </span>
-                </label>
+    <div class="flex flex-row justify-between">
+        <!-- Add new interest button -->
+        <a href="{% url 'dashboard:addInterestView' %}" class="bg-violet-500 hover:bg-violet-700 border-violet-500 hover:border-violet-700 text-sm border-4 text-white px-2 m-4 rounded-lg content-center">
+            New
+        </a>
+        <!-- Search and filter form -->
+        <form action="{% url 'dashboard:interestsDashView' %}" class="justify-items-end px-2">
+            <div class="flex items-center border-b border-violet-500 py-2">
+                <input class="peer appearance-none bg-transparent rounded-lg border-2 border-violet-200 text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none"
+                    type="search" placeholder="Search" aria-label="Search" name="search" value="{{request.GET.search}}">
+                <div class="flex content-center font-bold mx-3">
+                    <p class="text-violet-800 w-24">Filter by:</p>
+                    <label class="flex flex-col md:flex-row items-center text-gray-500 mx-2">
+                        <input class="mr-1 leading-tight" type="radio" name="orderby" value="latest" 
+                        {% if request.GET.orderby == 'latest' %} checked {% endif %}>
+                        <span class="text-sm">
+                            Latest
+                        </span>
+                    </label>
+                    <label class="flex flex-col md:flex-row items-center text-gray-500 mx-2">
+                        <input class="mr-1 leading-tight" type="radio" name="orderby" value="oldest"
+                        {% if request.GET.orderby == 'oldest' %} checked {% endif %}>
+                        <span class="text-sm">
+                            Oldest
+                        </span>
+                    </label>
+                </div>
+                <button class="flex-shrink-0 bg-slate-500 hover:bg-slate-700 border-slate-500 hover:border-slate-700 text-sm border-4 text-white px-2 rounded-lg"
+                    type="submit">
+                    Apply
+                </button>
             </div>
-            <button class="flex-shrink-0 bg-slate-500 hover:bg-slate-700 border-slate-500 hover:border-slate-700 text-sm border-4 text-white px-2 rounded-lg"
-                type="submit">
-                Apply
-            </button>
-        </div>
-    </form>
+        </form>
+    </div>
     <!-- Projects table -->
     <table class="min-w-full mt-5">
         <thead class="bg-gray-200">
