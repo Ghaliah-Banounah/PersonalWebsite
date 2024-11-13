@@ -4,9 +4,51 @@
 {% block title %}Add Interest{% endblock %}
 
 {% block content %}
-<h1 class="text-4xl font-bold m-5">Add Interest</h1>
-<div class="container bg-white rounded-lg shadow-md my-12 pt-5 overflow-x-scroll">
+<h1 class="text-4xl font-bold m-5 text-center">Add Interest</h1>
+<div class="bg-white shadow-md border rounded-3xl px-8 py-6 mx-auto my-8 max-w-2xl">
+    <form action="{% url 'dashboard:addInterestView' %}" method="post" class="group" novalidate>
+        {% csrf_token %}
+        <div class="mb-4 flex flex-col">
+            <label for="title" class="text-gray-700 font-bold text-xl mb-2">Title<span class="text-red-500 text-sm"> * </span></label>
+            <input type="text" id="title" name="title" placeholder="Interest title.."
+                class="peer bg-transparent rounded-lg border-2 border-violet-200 text-gray-700 p-2 leading-tight focus:outline-none invalid:[&:not(:placeholder-shown):not(:focus)]:border-red-500"
+                minlength="3" required>
+            <p class="mt-2 hidden text-sm text-red-500 peer-[&:not(:placeholder-shown):not(:focus):invalid]:block">
+                Please enter a valid title
+            </p>
+        </div>
+        <div class="mb-4 flex flex-col">
+            <label for="description" class="text-gray-700 font-bold text-xl mb-2">Description<span class="text-red-500 text-sm"> * </span></label>
+            <textarea id="description" name="description" placeholder="Interest description.."
+                class="peer bg-transparent rounded-lg border-2 border-violet-200 text-gray-700 p-2 leading-tight focus:outline-none invalid:[&:not(:placeholder-shown):not(:focus)]:border-red-500"
+                minlength="8" rows="5" required></textarea>
+            <p class="mt-2 hidden text-sm text-red-500 peer-[&:not(:placeholder-shown):not(:focus):invalid]:block">
+                Please enter a valid description
+            </p>
+        </div>
+        <p class="text-gray-700 font-bold text-xl">Upload a Picture<span class="text-red-500 text-sm"> * </span></p>
+        <div class="flex items-center space-x-6">
+            <div class="shrink-0">
+                <img id='preview_img' class="h-16 w-16 object-cover rounded-full"
+                    src="{% static 'images/default.jpg' %}"
+                    alt="preview_img" />
+            </div>
+            <label class="flex">
+                <span class="sr-only">Upload</span>
+                <input type="file" onchange="loadFile(event)" name="picture" class="peer flex w-full text-sm text-slate-600
+                file:mr-4 file:py-2 file:px-4
+                file:rounded-full file:border-0
+                file:text-sm file:font-semibold
+                file:bg-violet-50 file:text-violet-700
+                hover:file:bg-violet-100 invalid:border-red-500" accept="image/*" required/>
+            </label>
+        </div>
+        <div class="flex justify-center">
+            <button type="submit"
+                class="bg-violet-700 text-white px-8 py-2 rounded-full hover:bg-violet-300 group-invalid:pointer-events-none group-invalid:opacity-30">Add</button>
+        </div>
 
+    </form>
 </div>
 
 {% endblock %}
