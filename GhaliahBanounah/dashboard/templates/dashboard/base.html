@@ -4,65 +4,55 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Tailwind css -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css"/>
+    <!-- Local stylesheet -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <!-- Bootstrap icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css" />
     <title>{% block title %}{% endblock %}</title>
 </head>
 
-<body class="bg-slate-200">
-    <span class="absolute text-white text-4xl top-5 left-4 cursor-pointer" onclick="openSidebar()">
-        <i class="bi bi-filter-left px-2 bg-gray-900 rounded-md"></i>
-    </span>
-    <div class="sidebar fixed top-0 bottom-0 lg:left-0 p-2 w-[300px] overflow-y-auto text-center bg-gray-900">
-        <div class="text-gray-100 text-xl">
-            <div class="p-2.5 mt-1 flex items-center">
-                <i class="bi bi-bar-chart-steps px-2 py-1 bg-violet-800 rounded-md"></i>
-                <h1 class="font-bold text-gray-200 text-[15px] ml-3">Dashboard</h1>
-                <i class="bi bi-x cursor-pointer ml-28 lg:hidden" onclick="openSidebar()"></i>
+<body class="f-share-mono">
+    <div class="flex flex-row h-auto min-h-full">
+        <!-- Sidebar -->
+        <nav class="bg-gray-900 w-1/5 flex flex-col px-2 sm:px-4">
+            <div class="mt-4 mb-10 sticky top-4">
+                <div class="flex items-center justify-center rounded-sm mb-4 font-bold text-gray-200 text-[15px] md:text-[18px]">
+                    <i class="hidden sm:inline bi bi-bar-chart-steps p-1 rounded-md"></i>
+                    <h1 class="sm:m-2">Dashboard</h1>
+                </div>
+                <div class="my-2 bg-gray-600 h-[1px]"></div>
+                <div class="mt-4 p-2 flex items-center justify-center rounded-md duration-300 cursor-pointer hover:bg-violet-400 text-white 
+                    {% if request.path == '/dashboard/' %}bg-violet-800{% endif %}">
+                    <a href="{% url 'dashboard:homeView' %}" class="hidden sm:inline text-[15px] text-gray-200 font-bold"><i class="bi bi-house-door-fill p-1"></i>Home</a>
+                    <a href="{% url 'dashboard:homeView' %}" class="inline sm:hidden text-[15px] text-gray-200 font-bold"><i class="bi bi-house-door-fill p-1"></i></a>
+                </div>
+                <div class="my-2 bg-gray-600 h-[1px]"></div>
+                <div class="mt-4 p-2 flex items-center justify-center rounded-md duration-300 cursor-pointer hover:bg-violet-400 text-white 
+                    {% if request.path == '/dashboard/projects/' %}bg-violet-800{% endif %}">
+                    <a href="{% url 'dashboard:projectsDashView' %}" class="hidden sm:inline text-[15px] text-gray-200 font-bold"><i class="bi bi-file-earmark-bar-graph-fill p-1"></i>Projects</a>
+                    <a href="{% url 'dashboard:projectsDashView' %}" class="inline sm:hidden text-[15px] text-gray-200 font-bold"><i class="bi bi-file-earmark-bar-graph-fill p-1"></i></a>
+                </div>
+                <div class="mt-4 p-2 flex items-center justify-center rounded-md duration-300 cursor-pointer hover:bg-violet-400 text-white 
+                    {% if request.path == '/dashboard/interests/' %}bg-violet-800{% endif %}">
+                    <a href="{% url 'dashboard:interestsDashView' %}" class="hidden sm:inline text-[15px] text-gray-200 font-bold"><i class="bi bi-palette-fill p-1"></i>Interests</a>
+                    <a href="{% url 'dashboard:interestsDashView' %}" class="inline sm:hidden text-[15px] text-gray-200 font-bold"><i class="bi bi-palette-fill p-1"></i></a>
+                </div>
+                <div class="mt-4 p-2 flex items-center justify-center rounded-md duration-300 cursor-pointer hover:bg-violet-400 text-white 
+                    {% if request.path == '/dashboard/posts/' %}bg-violet-800{% endif %}">
+                    <a href="{% url 'dashboard:postsDashView' %}" class="hidden sm:inline text-[15px] text-gray-200 font-bold"><i class="bi bi-postcard-heart-fill p-1"></i>Posts</a>
+                    <a href="{% url 'dashboard:postsDashView' %}" class="inline sm:hidden text-[15px] text-gray-200 font-bold"><i class="bi bi-postcard-heart-fill p-1"></i></a>
+                </div>
             </div>
-            <div class="my-2 bg-gray-600 h-[1px]"></div>
+        </nav>
+        <!-- Content -->
+        <div class="px-16 py-4 text-gray-700 bg-gray-200 w-full">
+        {% block content %}
+
+        {% endblock %}
         </div>
-        <!-- Home link -->
-        <div
-            class="p-2.5 mt-3 flex items-center rounded-md px-4 duration-300 cursor-pointer hover:bg-violet-800 text-white 
-            {% if request.path == '/dashboard/' %}bg-violet-800{% endif %}">
-            <i class="bi bi-house-door-fill"></i>
-            <a href="{% url 'dashboard:homeView' %}" class="text-[15px] ml-4 text-gray-200 font-bold">Home</a>
-        </div>
-        <!-- Divider -->
-        <div class="my-4 bg-gray-600 h-[1px]"></div>
-        <!-- Dashboard pages -->
-        <div
-            class="p-2.5 mt-3 flex items-center rounded-md px-4 duration-300 cursor-pointer hover:bg-violet-800 active:bg-violet-800 text-white
-            {% if request.path == '/dashboard/projects/' %} bg-violet-800{% endif %}">
-            <i class="bi bi-file-earmark-bar-graph-fill"></i>
-            <a href="{% url 'dashboard:projectsDashView' %}" class="text-[15px] ml-4 text-gray-200 font-bold">Projects</a>
-        </div> 
-        <div
-            class="p-2.5 mt-3 flex items-center rounded-md px-4 duration-300 cursor-pointer hover:bg-violet-800 active:bg-violet-800 text-white 
-            {% if request.path == '/dashboard/interests/' %} bg-violet-800{% endif %}">
-            <i class="bi bi-palette-fill"></i>
-            <a href="{% url 'dashboard:interestsDashView' %}" class="text-[15px] ml-4 text-gray-200 font-bold">Interests</a>
-        </div> 
-        <div
-            class="p-2.5 mt-3 flex items-center rounded-md px-4 duration-300 cursor-pointer hover:bg-violet-800 active:bg-violet-800 text-white 
-            {% if request.path == '/dashboard/posts/' %} bg-violet-800 {% endif %}">
-            <i class="bi bi-postcard-heart-fill"></i>
-            <a href="{% url 'dashboard:postsDashView' %}" class="text-[15px] ml-4 text-gray-200 font-bold">Posts</a>
-        </div> 
     </div>
-
-    <script type="text/javascript">
-        function dropdown() {
-            document.querySelector("#submenu").classList.toggle("hidden");
-            document.querySelector("#arrow").classList.toggle("rotate-0");
-        }
-        dropdown();
-
-        function openSidebar() {
-            document.querySelector(".sidebar").classList.toggle("hidden");
-        }
-    </script>
 </body>
 
 </html>

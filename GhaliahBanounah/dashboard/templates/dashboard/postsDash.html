@@ -1,4 +1,122 @@
 {% extends 'dashboard/base.html' %}
 {% load static %}
 
-{% block title %}Dashboard{% endblock %}
+{% block title %}Posts Dashboard{% endblock %}
+
+{% block content %}
+<h1 class="text-3xl font-bold m-5">Posts</h1>
+<div class="container bg-white rounded-lg shadow-md my-12 pt-5 overflow-x-scroll">
+    <!-- Search and filter form -->
+    <form action="{% url 'dashboard:postsDashView' %}" class="justify-items-end px-2">
+        <div class="flex items-center border-b border-violet-500 py-2">
+            <input
+                class="peer appearance-none bg-transparent rounded-lg border-2 border-violet-200 text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none"
+                type="search" placeholder="Search" aria-label="Search" name="search" value="{{request.GET.search}}">
+            <div class="flex content-center font-bold mx-3">
+                <p class="text-violet-800 w-24">Filter by:</p>
+                <label class="flex flex-col md:flex-row items-center text-gray-500 mx-2">
+                    <input class="mr-1 leading-tight" type="radio" name="orderby" value="latest" 
+                    {% if request.GET.orderby == 'latest' %} checked {% endif %}>
+                    <span class="text-sm">
+                        Latest
+                    </span>
+                </label>
+                <label class="flex flex-col md:flex-row items-center text-gray-500 mx-2">
+                    <input class="mr-1 leading-tight" type="radio" name="orderby" value="oldest"
+                    {% if request.GET.orderby == 'oldest' %} checked {% endif %}>
+                    <span class="text-sm">
+                        Oldest
+                    </span>
+                </label>
+            </div>
+            <button class="flex-shrink-0 bg-slate-500 hover:bg-slate-700 border-slate-500 hover:border-slate-700 text-sm border-4 text-white px-2 rounded-lg"
+                type="submit">
+                Apply
+            </button>
+        </div>
+    </form>
+    <!-- Projects table -->
+    <table class="min-w-full mt-5">
+        <thead class="bg-gray-200">
+            <tr>
+                <th class="px-6 py-3 border-b-2 border-gray-300 text-left leading-4 text-violet-600 tracking-wider">
+                    Title
+                </th>
+                <th class="px-6 py-3 border-b-2 border-gray-300 text-left text-sm leading-4 text-violet-600 tracking-wider">
+                    Picture
+                </th>
+                <th class="px-6 py-3 border-b-2 border-gray-300 text-left text-sm leading-4 text-violet-600 tracking-wider">
+                    Content
+                </th>
+                <th class="px-6 py-3 border-b-2 border-gray-300 text-left text-sm leading-4 text-violet-600 tracking-wider">
+                    Is Published
+                </th>
+                <th class="px-6 py-3 border-b-2 border-gray-300 text-left text-sm leading-4 text-violet-600 tracking-wider">
+                    Created At
+                </th>
+                <th class="px-6 py-3 border-b-2 border-gray-300"></th>
+            </tr>
+        </thead>
+        <tbody class="bg-gray-100">
+            {% for post in page_obj %}
+            <tr>
+                <td class="px-6 py-4 border-b border-gray-500">
+                    <p class="text-sm leading-5 text-gray-800">{{post.title}}</p>
+                </td>
+                <td class="px-6 py-4 border-b border-gray-500">
+                    <img src="{{post.picture.url}}" alt="project img" class="h-20 min-w-28 rounded-lg shadow-md">
+                </td>
+                <td class="px-6 py-4 border-b border-gray-500">
+                    <p class="text-blue-900 text-sm leading-4 w-32 truncate">{{post.content}}</p>
+                </td>
+                <td class="px-6 py-4 border-b border-gray-500">
+                    <p class="text-blue-900 text-sm leading-4 w-32 truncate">{% if post.isPublished %}Yes{% else %}No{% endif %}</p>
+                </td>
+                <td class="px-6 py-4 border-b border-gray-500">
+                    <p class="text-blue-900 text-sm leading-4">{{post.publishedAt}}</p>
+                </td>
+                <td class="px-6 py-4 text-right border-b border-gray-500">
+                    <div class="flex gap-2">
+                        <a href=""
+                            class="my-1 px-2 py-2 border-red-500 border text-red-500 rounded transition duration-300 hover:bg-red-700 hover:text-white focus:outline-none">
+                            <i class="bi bi-trash3"></i>
+                        </a>
+                        <a href=""
+                            class="my-1 px-2 py-2 border-green-500 border text-green-500 rounded transition duration-300 hover:bg-green-700 hover:text-white focus:outline-none">
+                            <i class="bi bi-pencil-square"></i>
+                        </a>
+                    </div>
+                </td>
+            </tr>
+            {% empty %}
+            <tr>
+                <td colspan="7" class="text-blue-900 text-sm text-center leading-4 px-6 py-4 border-b border-gray-500">
+                    No data found..
+                </td>
+            </tr>
+            {% endfor %}
+
+            <tr class="px-6 py-4 border-b border-gray-500">
+                <td colspan="7" class="text-blue-900 text-sm text-center leading-4 px-6 py-4 border-b border-gray-500">
+                    <!-- Pagination -->
+                    <span>
+                        {% if page_obj.has_previous %}
+                        <a href="{% url 'dashboard:postsDashView' %}{% querystring page=page_obj.previous_page_number %}"  class="p-2">
+                            Previous
+                        </a>
+                        {% endif %}
+                        <span class="p-2 font-bold">
+                            Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}
+                        </span>
+                        {% if page_obj.has_next %}
+                        <a href="{% url 'dashboard:postsDashView' %}{% querystring page=page_obj.next_page_number %}" class="p-2">
+                            Next
+                        </a>
+                        {% endif %}
+                    </span>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+{% endblock %}

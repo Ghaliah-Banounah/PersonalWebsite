@@ -3,4 +3,179 @@
 
 {% block title %}Dashboard{% endblock %}
 
+{% block content %}
+<h1 class="text-5xl font-bold text-violet-800 pt-4">Latest entries</h1>
 
+<!-- Projects table -->
+<div class="container bg-white rounded-lg shadow-md my-12 pt-5 overflow-x-scroll">
+    <h1 class="text-3xl font-bold mx-5">Projects</h1>
+    <table class="min-w-full mt-5">
+        <thead class="bg-gray-200">
+            <tr>
+                <th class="px-6 py-3 border-b-2 border-gray-300 text-left leading-4 text-violet-600 tracking-wider">
+                    Title
+                </th>
+                <th class="px-6 py-3 border-b-2 border-gray-300 text-left text-sm leading-4 text-violet-600 tracking-wider">
+                    Picture
+                </th>
+                <th class="px-6 py-3 border-b-2 border-gray-300 text-left text-sm leading-4 text-violet-600 tracking-wider">
+                    Description
+                </th>
+                <th class="px-6 py-3 border-b-2 border-gray-300 text-left text-sm leading-4 text-violet-600 tracking-wider">
+                    Challenges
+                </th>
+                <th class="px-6 py-3 border-b-2 border-gray-300 text-left text-sm leading-4 text-violet-600 tracking-wider">
+                    Path to Repo
+                </th>
+                <th class="px-6 py-3 border-b-2 border-gray-300 text-left text-sm leading-4 text-violet-600 tracking-wider">
+                    Created At
+                </th>
+                <th class="px-6 py-3 border-b-2 border-gray-300"></th>
+            </tr>
+        </thead>
+        <tbody class="bg-gray-100">
+            {% for project in projects %}
+            <tr>
+                <td class="px-6 py-4 border-b border-gray-500">
+                    <p class="text-sm leading-5 text-gray-800">{{project.title}}</p>
+                </td>
+                <td class="px-6 py-4 border-b border-gray-500">
+                    <img src="{{project.picture.url}}" alt="project img" class="h-20 min-w-28 rounded-lg shadow-md">
+                </td>
+                <td class="px-6 py-4 border-b border-gray-500">
+                    <p class="text-blue-900 text-sm leading-4 w-32 truncate">{{project.description}}</p>
+                </td>
+                <td class="px-6 py-4 border-b border-gray-500">
+                    <p class="text-blue-900 text-sm leading-4 w-32 truncate">{{project.challenges}}</p>
+                </td>
+                <td class="px-6 py-4 border-b border-gray-500">
+                    <a href="{{project.pathTo}}" class="text-violet-400 font-semibold text-sm leading-4 w-32 truncate">Go to Repo</a>
+                </td>
+                <td class="px-6 py-4 border-b border-gray-500">
+                    <p class="text-blue-900 text-sm leading-4">{{project.createdAt}}</p>
+                </td>
+                <td class="px-6 py-4 text-right border-b border-gray-500">
+                    <div class="flex gap-2">
+                        <a href="" class="my-1 px-2 py-2 border-red-500 border text-red-500 rounded transition duration-300 hover:bg-red-700 hover:text-white focus:outline-none">
+                            <i class="bi bi-trash3"></i>
+                        </a>
+                        <a href="" class="my-1 px-2 py-2 border-green-500 border text-green-500 rounded transition duration-300 hover:bg-green-700 hover:text-white focus:outline-none">
+                            <i class="bi bi-pencil-square"></i>
+                        </a>
+                    </div>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+<!-- Interests table -->
+<div class="container bg-white rounded-lg shadow-md my-12 pt-5 overflow-x-scroll">
+    <h1 class="text-3xl font-bold mx-5">Interests</h1>
+    <table class="min-w-full mt-5">
+        <thead class="bg-gray-200">
+            <tr>
+                <th class="px-6 py-3 border-b-2 border-gray-300 text-left leading-4 text-violet-600 tracking-wider">
+                    Title
+                </th>
+                <th class="px-6 py-3 border-b-2 border-gray-300 text-left text-sm leading-4 text-violet-600 tracking-wider">
+                    Picture
+                </th>
+                <th class="px-6 py-3 border-b-2 border-gray-300 text-left text-sm leading-4 text-violet-600 tracking-wider">
+                    Description
+                </th>
+                <th class="px-6 py-3 border-b-2 border-gray-300 text-left text-sm leading-4 text-violet-600 tracking-wider">
+                    Created At
+                </th>
+                <th class="px-6 py-3 border-b-2 border-gray-300"></th>
+            </tr>
+        </thead>
+        <tbody class="bg-gray-100">
+            {% for interest in interests %}
+            <tr>
+                <td class="px-6 py-4 border-b border-gray-500">
+                    <p class="text-sm leading-5 text-gray-800">{{interest.title}}</p>
+                </td>
+                <td class="px-6 py-4 border-b border-gray-500">
+                    <img src="{{interest.picture.url}}" alt="project img" class="h-20 min-w-28 rounded-lg shadow-md">
+                </td>
+                <td class="px-6 py-4 border-b border-gray-500">
+                    <p class="text-blue-900 text-sm leading-4 w-32 truncate">{{interest.description}}</p>
+                </td>
+                <td class="px-6 py-4 border-b border-gray-500">
+                    <p class="text-blue-900 text-sm leading-4">{{interest.createdAt}}</p>
+                </td>
+                <td class="px-6 py-4 text-right border-b border-gray-500">
+                    <div class="flex gap-2">
+                        <a href="" class="my-1 px-2 py-2 border-red-500 border text-red-500 rounded transition duration-300 hover:bg-red-700 hover:text-white focus:outline-none">
+                            <i class="bi bi-trash3"></i>
+                        </a>
+                        <a href="" class="my-1 px-2 py-2 border-green-500 border text-green-500 rounded transition duration-300 hover:bg-green-700 hover:text-white focus:outline-none">
+                            <i class="bi bi-pencil-square"></i>
+                        </a>
+                    </div>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+<!-- Posts table -->
+<div class="container bg-white rounded-lg shadow-md my-12 pt-5 overflow-x-scroll">
+    <h1 class="text-3xl font-bold mx-5">Posts</h1>
+    <table class="min-w-full mt-5">
+        <thead class="bg-gray-200">
+            <tr>
+                <th class="px-6 py-3 border-b-2 border-gray-300 text-left leading-4 text-violet-600 tracking-wider">
+                    Title
+                </th>
+                <th class="px-6 py-3 border-b-2 border-gray-300 text-left text-sm leading-4 text-violet-600 tracking-wider">
+                    Picture
+                </th>
+                <th class="px-6 py-3 border-b-2 border-gray-300 text-left text-sm leading-4 text-violet-600 tracking-wider">
+                    Content
+                </th>
+                <th class="px-6 py-3 border-b-2 border-gray-300 text-left text-sm leading-4 text-violet-600 tracking-wider">
+                    Is Published
+                </th>
+                <th class="px-6 py-3 border-b-2 border-gray-300 text-left text-sm leading-4 text-violet-600 tracking-wider">
+                    Created At
+                </th>
+                <th class="px-6 py-3 border-b-2 border-gray-300"></th>
+            </tr>
+        </thead>
+        <tbody class="bg-gray-100">
+            {% for post in posts %}
+            <tr>
+                <td class="px-6 py-4 border-b border-gray-500">
+                    <p class="text-sm leading-5 text-gray-800">{{post.title}}</p>
+                </td>
+                <td class="px-6 py-4 border-b border-gray-500">
+                    <img src="{{post.picture.url}}" alt="project img" class="h-20 min-w-28 rounded-lg shadow-md">
+                </td>
+                <td class="px-6 py-4 border-b border-gray-500">
+                    <p class="text-blue-900 text-sm leading-4 w-32 truncate">{{post.content}}</p>
+                </td>
+                <td class="px-6 py-4 border-b border-gray-500">
+                    <p class="text-blue-900 text-sm leading-4 w-32 truncate">{% if post.isPublished %}Yes{% else %}No{% endif %}</p>
+                </td> 
+                <td class="px-6 py-4 border-b border-gray-500">
+                    <p class="text-blue-900 text-sm leading-4">{{post.publishedAt}}</p>
+                </td>
+                <td class="px-6 py-4 text-right border-b border-gray-500">
+                    <div class="flex gap-2">
+                        <a href="" class="my-1 px-2 py-2 border-red-500 border text-red-500 rounded transition duration-300 hover:bg-red-700 hover:text-white focus:outline-none">
+                            <i class="bi bi-trash3"></i>
+                        </a>
+                        <a href="" class="my-1 px-2 py-2 border-green-500 border text-green-500 rounded transition duration-300 hover:bg-green-700 hover:text-white focus:outline-none">
+                            <i class="bi bi-pencil-square"></i>
+                        </a>
+                    </div>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}
