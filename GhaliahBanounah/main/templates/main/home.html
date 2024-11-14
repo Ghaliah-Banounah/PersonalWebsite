@@ -32,7 +32,7 @@
 <section class="container-md my-5">
     <div class="d-flex flex-row justify-content-between mt-5 pt-5 block">
         <a href="{% url 'projects:displayProjectsView' %}" class="fw-semibold h2 linkHover">Projects</a>
-        <a href="{% url 'projects:displayProjectsView' %}" class="align-self-center h3 linkHover">More
+        <a href="{% url 'projects:displayProjectsView' %}" class="align-self-center h3 linkHover fw-bold">More
             <span class="material-symbols-outlined">arrow_forward</span>
         </a>
     </div>
@@ -41,8 +41,8 @@
         {% for project in projects %}
         <div class="card g-0 rounded-5 border-0 shadow overflow-hidden m-2 block crd text-center">
             <img src="{{project.picture.url}}" class="card-img-top object-fit-cover h-75" alt="project Picture">
-            <div class="card-body">
-                <a href="{% url 'projects:projectDetailsView' project.id %}" class="fs-5">{{project.title}}</a>
+            <div class="card-body linkHover">
+                <a href="{% url 'projects:projectDetailsView' project.id %}" class="fs-5 fw-bold">{{project.title}}</a>
             </div>
         </div>
         {% endfor %}
@@ -53,7 +53,7 @@
 <section class="container-md my-5">
     <div class="d-flex flex-row justify-content-between mt-5 pt-5 block">
         <a href="{% url 'interests:displayInterestsView' %}" class="fw-semibold h2 linkHover">Interests</a>
-        <a href="{% url 'interests:displayInterestsView' %}" class="align-self-center h3 linkHover">More
+        <a href="{% url 'interests:displayInterestsView' %}" class="align-self-center h3 linkHover fw-bold">More
             <span class="material-symbols-outlined">arrow_forward</span>
         </a>
     </div>
@@ -62,8 +62,8 @@
         {% for interest in interests %}
         <div class="card g-0 rounded-5 border-0 shadow overflow-hidden m-2 block crd text-center">
             <img src="{{interest.picture.url}}" class="card-img-top object-fit-cover h-75" alt="interest Picture">
-            <div class="card-body">
-                <a href="{% url 'interests:interestDetailsView' interest.id %}" class="fs-5">{{interest.title}}</a>
+            <div class="card-body linkHover">
+                <a href="{% url 'interests:interestDetailsView' interest.id %}" class="fs-5 fw-bold">{{interest.title}}</a>
             </div>
         </div>
         {% endfor %}
@@ -74,7 +74,7 @@
 <section class="container-md my-5">
     <div class="d-flex flex-row justify-content-between mt-5 pt-5 block">
         <a href="{% url 'posts:blogView' %}" class="fw-semibold h2 linkHover">From the Blog</a>
-        <a href="{% url 'posts:blogView' %}" class="align-self-center h3 linkHover">More
+        <a href="{% url 'posts:blogView' %}" class="align-self-center h3 linkHover fw-bold">More
             <span class="material-symbols-outlined">arrow_forward</span>
         </a>
     </div>
@@ -84,8 +84,8 @@
             {% if post.isPublished %}
             <div class="card g-0 rounded-5 border-0 shadow overflow-hidden m-2 block crd text-center">
                 <img src="{{post.picture.url}}" class="card-img-top object-fit-cover h-75" alt="post Picture">
-                <div class="card-body">
-                    <a href="{% url 'posts:postDetailsView' post.id %}" class="h4">{{post.title}}</a>
+                <div class="card-body linkHover">
+                    <a href="{% url 'posts:postDetailsView' post.id %}" class="fs-5 fw-bold">{{post.title}}</a>
                 </div>
             </div>
             {% endif %}

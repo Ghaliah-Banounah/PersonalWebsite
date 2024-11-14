@@ -11,7 +11,7 @@
         {% for project in page_obj %}
         <div class="card g-0 border-0 rounded-5 shadow sm-crd overflow-hidden">
             <div class="card-body">
-                <a href="{% url 'projects:projectDetailsView' project.id %}" class="card-title h3 fw-bold">{{project.title}}</a>
+                <a href="{% url 'projects:projectDetailsView' project.id %}" class="card-title h3 fw-bold purple-sub">{{project.title}}</a>
                 <p class="card-text text-start mt-4">{{project.description}}</p>
                 <p class="card-text text-start small">Added at: {{project.createdAt}}</p>
             </div>
