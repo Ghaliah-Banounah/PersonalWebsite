@@ -4,11 +4,12 @@
 {% block title %}Dashboard{% endblock %}
 
 {% block content %}
+
 <h1 class="text-5xl font-bold text-violet-800 pt-4">Latest entries</h1>
 
 <!-- Projects table -->
 <div class="container bg-white rounded-lg shadow-md my-12 pt-5 overflow-x-scroll">
-    <h1 class="text-3xl font-bold mx-5">Projects</h1>
+    <a href="{% url 'dashboard:projectsDashView' %}" class="text-3xl font-bold mx-5 hover:text-violet-400 transition-all">Projects</a>
     <table class="min-w-full mt-5">
         <thead class="bg-gray-200">
             <tr>
@@ -61,7 +62,7 @@
 
 <!-- Interests table -->
 <div class="container bg-white rounded-lg shadow-md my-12 pt-5 overflow-x-scroll">
-    <h1 class="text-3xl font-bold mx-5">Interests</h1>
+    <a href="{% url 'dashboard:interestsDashView' %}" class="text-3xl font-bold mx-5 hover:text-violet-400 transition-all">Interests</a>
     <table class="min-w-full mt-5">
         <thead class="bg-gray-200">
             <tr>
@@ -102,7 +103,7 @@
 
 <!-- Posts table -->
 <div class="container bg-white rounded-lg shadow-md my-12 pt-5 overflow-x-scroll">
-    <h1 class="text-3xl font-bold mx-5">Posts</h1>
+    <a href="{% url 'dashboard:postsDashView' %}" class="text-3xl font-bold mx-5 hover:text-violet-400 transition-all">Posts</a>
     <table class="min-w-full mt-5">
         <thead class="bg-gray-200">
             <tr>
@@ -146,4 +147,5 @@
         </tbody>
     </table>
 </div>
+
 {% endblock %}

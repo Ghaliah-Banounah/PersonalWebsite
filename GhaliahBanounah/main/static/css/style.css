@@ -17,6 +17,22 @@
     overflow-x: hidden;
 }
 
+.dark .purple {
+    color: #c2a7da;
+}
+
+.light .purple {
+    color: #8e70a6;
+}
+
+.dark .purple-sub {
+    color: #9574b5;
+}
+
+.light .purple-sub {
+    color: #61427a;
+}
+
 /* Links */
 .dark a {
     text-decoration: none;
@@ -647,4 +663,9 @@
     backdrop-filter: blur(7px);
     max-height: 28rem;
     max-width: 30rem;
+}
+
+/* Max col height for display */
+.h-col {
+    max-height: 75%;
 }

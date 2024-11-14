@@ -1,0 +1,23 @@
+{% extends 'main/base.html' %}
+{% load static %}
+
+{% block title %}Interest Details{% endblock %}
+
+{% block content %}
+<section class="container-lg my-5 p-0 text-center">
+    <div class="row row-cols-1 row-cols-md-2 justify-content-center gap-3">
+        <div class="col col-md-6 col-lg-5 h-col">
+            <img src="{{interest.picture.url}}" class="w-100 h-100 object-fit-cover rounded-5 shadow" />
+        </div>
+        <div class="col col-md-6 col-lg-5 h-col">
+            <div class="d-flex flex-column text-start h-100 p-4 shadow gap-1 rounded-5 frm">
+                <h5 class="display-6 fw-bold purple"> {{interest.title}} </h5>
+                <h6 class="fw-bold fs-5 purple-sub">Description:</h6>
+                <p class="fs-6 ps-4">{{interest.description}}</p>
+                <h6 class="fw-bold fs-5 purple-sub">Date added:</h6>
+                <p class="fs-6 ps-4">{{interest.createdAt}}</p>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

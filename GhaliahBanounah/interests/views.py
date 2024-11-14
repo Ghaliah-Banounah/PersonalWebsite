@@ -50,6 +50,19 @@ def deleteInterestView(request: HttpRequest, interId:int):
         response = redirect('dashboard:interestsDashView')
     return response
 
+#Interest details view
+def interestDetailsView(request: HttpRequest, interId:int):
+
+    #Check if the ID is valid or display a 404
+    try:
+        interest = Interest.objects.get(pk=interId)
+    except Exception:
+        response = render(request, '404.html')
+    else:
+        response = render(request, 'interests/interestDetails.html', context={"interest":interest})
+    
+    return response
+
 def displayInterestsView(request: HttpRequest):
 
     interests = Interest.objects.all().order_by('-createdAt')

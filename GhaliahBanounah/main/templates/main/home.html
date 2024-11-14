@@ -42,7 +42,7 @@
         <div class="card g-0 rounded-5 border-0 shadow overflow-hidden m-2 block crd text-center">
             <img src="{{project.picture.url}}" class="card-img-top object-fit-cover h-75" alt="project Picture">
             <div class="card-body">
-                <a href="" class="fs-5">{{project.title}}</a>
+                <a href="{% url 'projects:projectDetailsView' project.id %}" class="fs-5">{{project.title}}</a>
             </div>
         </div>
         {% endfor %}
@@ -63,7 +63,7 @@
         <div class="card g-0 rounded-5 border-0 shadow overflow-hidden m-2 block crd text-center">
             <img src="{{interest.picture.url}}" class="card-img-top object-fit-cover h-75" alt="interest Picture">
             <div class="card-body">
-                <a href="" class="fs-5">{{interest.title}}</a>
+                <a href="{% url 'interests:interestDetailsView' interest.id %}" class="fs-5">{{interest.title}}</a>
             </div>
         </div>
         {% endfor %}
@@ -85,7 +85,7 @@
             <div class="card g-0 rounded-5 border-0 shadow overflow-hidden m-2 block crd text-center">
                 <img src="{{post.picture.url}}" class="card-img-top object-fit-cover h-75" alt="post Picture">
                 <div class="card-body">
-                    <a href="" class="h4">{{post.title}}</a>
+                    <a href="{% url 'posts:postDetailsView' post.id %}" class="h4">{{post.title}}</a>
                 </div>
             </div>
             {% endif %}

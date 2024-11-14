@@ -10,7 +10,7 @@
         {% for interest in interests %}
         <div class="card g-0 border-0 rounded-5 shadow sm-crd overflow-hidden">
             <div class="card-body">
-                <a href="" class="card-title h3 fw-bold">{{interest.title}}</a>
+                <a href="{% url 'interests:interestDetailsView' interest.id %}" class="card-title h3 fw-bold">{{interest.title}}</a>
                 <p class="card-text text-start mt-4">{{interest.description}}</p>
                 <p class="card-text text-start small">Added at: {{interest.createdAt}}</p>
             </div>

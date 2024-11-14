@@ -4,6 +4,7 @@
 {% block title %}Posts Dashboard{% endblock %}
 
 {% block content %}
+
 <h1 class="text-3xl font-bold m-5">Posts</h1>
 <div class="container bg-white rounded-lg shadow-md my-12 pt-5 overflow-x-scroll">
     <div class="flex flex-row justify-between">
@@ -84,7 +85,7 @@
                 </td>
                 <td class="px-6 py-4 text-right border-b border-gray-500">
                     <div class="flex gap-2">
-                        <a href=""
+                        <a href="{% url 'posts:postDetailsView' post.id %}"
                             class="my-1 p-2 border-sky-300 border text-sky-300 rounded transition duration-300 hover:bg-sky-400 hover:text-white focus:outline-none">
                             <i class="bi bi-eye-fill"></i>
                         </a>
@@ -168,4 +169,5 @@
         </tbody>
     </table>
 </div>
+
 {% endblock %}
