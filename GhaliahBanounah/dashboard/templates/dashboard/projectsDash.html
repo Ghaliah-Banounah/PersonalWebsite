@@ -36,6 +36,16 @@
                         </span>
                     </label>
                 </div>
+                <div class="flex items-center mx-3 font-bold">
+                    <p class="text-violet-800 w-24">Entries:</p>
+                    <select id="entries" name="entries"
+                        class="text-gray-500 border-b-2 p-2 w-full rounded-lg focus:outline-none focus:border-violet-200">
+                        <option disabled {% if not request.GET.entries %}selected{% endif %} value=0># entries</option>
+                        <option value= 3 {% if request.GET.entries == '3' %}selected{% endif %}>3</option>
+                        <option value= 5 {% if request.GET.entries == '5' %}selected{% endif %}>5</option>
+                        <option value= 10 {% if request.GET.entries == '10' %}selected{% endif %}>10</option>
+                    </select>
+                </div>
                 <button
                     class="flex-shrink-0 bg-slate-500 hover:bg-slate-700 border-slate-500 hover:border-slate-700 text-sm border-4 text-white px-2 rounded-lg"
                     type="submit">

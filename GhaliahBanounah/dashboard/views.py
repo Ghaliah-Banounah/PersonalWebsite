@@ -25,8 +25,12 @@ def projectsDashView(request: HttpRequest):
     elif "orderby" in request.GET and request.GET["orderby"] == "oldest":
         projects = projects.order_by('createdAt')
 
-    paginator = Paginator(projects, 5)
-    pageNumber = request.GET.get('page', 1)
+    if "entries" in request.GET:
+        paginator = Paginator(projects, request.GET['entries'])
+    else:
+        paginator = Paginator(projects, 5)
+
+    pageNumber = request.GET.get('page')
     page_obj = paginator.get_page(pageNumber)
 
     return render(request, 'dashboard/projectsDash.html', {"page_obj" : page_obj})
@@ -43,8 +47,11 @@ def postsDashView(request: HttpRequest):
     elif "orderby" in request.GET and request.GET["orderby"] == "oldest":
         posts = posts.order_by('publishedAt')
 
-    paginator = Paginator(posts, 5)
-    pageNumber = request.GET.get('page', 1)
+    if "entries" in request.GET:
+        paginator = Paginator(posts, request.GET['entries'])
+    else:
+        paginator = Paginator(posts, 5)
+    pageNumber = request.GET.get('page')
     page_obj = paginator.get_page(pageNumber)
 
     return render(request, 'dashboard/postsDash.html', {"page_obj" : page_obj})
@@ -61,8 +68,12 @@ def interestsDashView(request: HttpRequest):
     elif "orderby" in request.GET and request.GET["orderby"] == "oldest":
         interests = interests.order_by('createdAt')
 
-    paginator = Paginator(interests, 5)
-    pageNumber = request.GET.get('page', 1)
+    if "entries" in request.GET:
+        paginator = Paginator(interests, request.GET['entries'])
+    else:
+        paginator = Paginator(interests, 5)
+
+    pageNumber = request.GET.get('page')
     page_obj = paginator.get_page(pageNumber)
 
     return render(request, 'dashboard/interestsDash.html', {"page_obj" : page_obj})

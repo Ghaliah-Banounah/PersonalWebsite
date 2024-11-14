@@ -22,27 +22,43 @@
                     <i class="hidden sm:inline bi bi-bar-chart-steps p-1 rounded-md"></i>
                     <h1 class="sm:m-2">Dashboard</h1>
                 </div>
-                <div class="my-2 bg-gray-600 h-[1px]"></div>
-                <div class="mt-4 p-2 flex items-center justify-center rounded-md duration-300 cursor-pointer hover:bg-violet-400 text-white 
+                <div class="my-4 bg-gray-600 h-[1px]"></div>
+                <div class="flex items-center text-center rounded-md 
                     {% if request.path == '/dashboard/' %}bg-violet-800{% endif %}">
-                    <a href="{% url 'dashboard:homeView' %}" class="hidden sm:inline text-[15px] text-gray-200 font-bold"><i class="bi bi-house-door-fill p-1"></i>Home</a>
-                    <a href="{% url 'dashboard:homeView' %}" class="inline sm:hidden text-[15px] text-gray-200 font-bold"><i class="bi bi-house-door-fill p-1"></i></a>
+                    <a href="{% url 'dashboard:homeView' %}" class="p-2 hidden sm:inline rounded-md duration-300 cursor-pointer hover:bg-violet-400 text-white text-[15px] text-gray-200 font-bold h-full w-full">
+                        <i class="bi bi-house-door-fill p-1"></i>Home
+                    </a>
+                    <a href="{% url 'dashboard:homeView' %}" class="p-2 inline sm:hidden rounded-md duration-300 cursor-pointer hover:bg-violet-400 text-white text-[15px] text-gray-200 font-bold h-full w-full">
+                        <i class="bi bi-house-door-fill p-1"></i>
+                    </a>
                 </div>
-                <div class="my-2 bg-gray-600 h-[1px]"></div>
-                <div class="mt-4 p-2 flex items-center justify-center rounded-md duration-300 cursor-pointer hover:bg-violet-400 text-white 
+                <div class="my-4 bg-gray-600 h-[1px]"></div>
+                <div class="flex items-center text-center rounded-md 
                     {% if request.path == '/dashboard/projects/' %}bg-violet-800{% endif %}">
-                    <a href="{% url 'dashboard:projectsDashView' %}" class="hidden sm:inline text-[15px] text-gray-200 font-bold"><i class="bi bi-file-earmark-bar-graph-fill p-1"></i>Projects</a>
-                    <a href="{% url 'dashboard:projectsDashView' %}" class="inline sm:hidden text-[15px] text-gray-200 font-bold"><i class="bi bi-file-earmark-bar-graph-fill p-1"></i></a>
+                    <a href="{% url 'dashboard:projectsDashView' %}" class="p-2 hidden sm:inline rounded-md duration-300 cursor-pointer hover:bg-violet-400 text-white text-[15px] text-gray-200 font-bold h-full w-full">
+                        <i class="bi bi-file-earmark-bar-graph-fill p-1"></i>Projects
+                    </a>
+                    <a href="{% url 'dashboard:projectsDashView' %}" class="p-2 inline sm:hidden rounded-md duration-300 cursor-pointer hover:bg-violet-400 text-white text-[15px] text-gray-200 font-bold h-full w-full">
+                        <i class="bi bi-file-earmark-bar-graph-fill p-1"></i>
+                    </a>
                 </div>
-                <div class="mt-4 p-2 flex items-center justify-center rounded-md duration-300 cursor-pointer hover:bg-violet-400 text-white 
+                <div class="flex items-center text-center rounded-md 
                     {% if request.path == '/dashboard/interests/' %}bg-violet-800{% endif %}">
-                    <a href="{% url 'dashboard:interestsDashView' %}" class="hidden sm:inline text-[15px] text-gray-200 font-bold"><i class="bi bi-palette-fill p-1"></i>Interests</a>
-                    <a href="{% url 'dashboard:interestsDashView' %}" class="inline sm:hidden text-[15px] text-gray-200 font-bold"><i class="bi bi-palette-fill p-1"></i></a>
+                    <a href="{% url 'dashboard:interestsDashView' %}" class="p-2 hidden sm:inline rounded-md duration-300 cursor-pointer hover:bg-violet-400 text-white text-[15px] text-gray-200 font-bold h-full w-full">
+                        <i class="bi bi-palette-fill p-1"></i>Interests
+                    </a>
+                    <a href="{% url 'dashboard:interestsDashView' %}" class="p-2 inline sm:hidden rounded-md duration-300 cursor-pointer hover:bg-violet-400 text-white text-[15px] text-gray-200 font-bold h-full w-full">
+                        <i class="bi bi-palette-fill p-1"></i>
+                    </a>
                 </div>
-                <div class="mt-4 p-2 flex items-center justify-center rounded-md duration-300 cursor-pointer hover:bg-violet-400 text-white 
+                <div class="flex items-center text-center rounded-md
                     {% if request.path == '/dashboard/posts/' %}bg-violet-800{% endif %}">
-                    <a href="{% url 'dashboard:postsDashView' %}" class="hidden sm:inline text-[15px] text-gray-200 font-bold"><i class="bi bi-postcard-heart-fill p-1"></i>Posts</a>
-                    <a href="{% url 'dashboard:postsDashView' %}" class="inline sm:hidden text-[15px] text-gray-200 font-bold"><i class="bi bi-postcard-heart-fill p-1"></i></a>
+                    <a href="{% url 'dashboard:postsDashView' %}" class="p-2 hidden sm:inline rounded-md duration-300 cursor-pointer hover:bg-violet-400 text-white text-[15px] text-gray-200 font-bold h-full w-full">
+                        <i class="bi bi-postcard-heart-fill p-1"></i>Posts
+                    </a>
+                    <a href="{% url 'dashboard:postsDashView' %}" class="p-2 inline sm:hidden rounded-md duration-300 cursor-pointer hover:bg-violet-400 text-white text-[15px] text-gray-200 font-bold h-full w-full">
+                        <i class="bi bi-postcard-heart-fill p-1"></i>
+                    </a>
                 </div>
             </div>
         </nav>
