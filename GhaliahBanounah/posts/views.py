@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from django.http import HttpRequest
 from .models import Post
 from .forms import PostForm
+from django.core.paginator import Paginator
 
 # Add post
 def addPostView(request: HttpRequest):
@@ -38,7 +39,7 @@ def updatePostView(request: HttpRequest, postid:int):
 
     return response
 
-#Post details view
+# Post details view
 def postDetailsView(request: HttpRequest, postid:int):
 
     #Check if the ID is valid or display a 404
@@ -51,7 +52,7 @@ def postDetailsView(request: HttpRequest, postid:int):
     
     return response
 
-#Delete post view
+# Delete post view
 def deletePostView(request: HttpRequest, postid:int):
 
     try:
@@ -63,10 +64,16 @@ def deletePostView(request: HttpRequest, postid:int):
         response = redirect('dashboard:postsDashView')
     return response
 
+# Blog view
 def blogView(request: HttpRequest):
 
     posts = Post.objects.all().order_by('-publishedAt')
-    response = render(request, 'posts/blog.html', context={'posts': posts})
+
+    paginator = Paginator(posts, 4)
+    pageNumber = request.GET.get('page', 1)
+    page_obj = paginator.get_page(pageNumber)
+
+    response = render(request, 'posts/blog.html', context={'page_obj': page_obj})
 
 
     return response

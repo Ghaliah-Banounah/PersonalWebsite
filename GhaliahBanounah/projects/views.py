@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from django.http import HttpRequest
 from .forms import ProjectForm
 from .models import Project
+from django.core.paginator import Paginator
 
 # Add project
 def addProjectView(request: HttpRequest):
@@ -67,6 +68,11 @@ def projectDetailsView(request: HttpRequest, projId:int):
 def displayProjectsView(request: HttpRequest):
 
     projects = Project.objects.all().order_by('-createdAt')
-    response = render(request, 'projects/displayProjects.html', context={'projects': projects})
+
+    paginator = Paginator(projects, 4)
+    pageNumber = request.GET.get('page', 1)
+    page_obj = paginator.get_page(pageNumber)
+
+    response = render(request, 'projects/displayProjects.html', context={'page_obj': page_obj})
 
     return response

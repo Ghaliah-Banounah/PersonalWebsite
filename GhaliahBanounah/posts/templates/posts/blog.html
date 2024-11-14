@@ -5,9 +5,10 @@
 
 {% block content %}
 <section class="container-fluid text-center">
-    <h1 class="display-4 fw-bold my-3">Blog</h1>
+    <h1 class="display-5 fw-bold my-3">Blog</h1>
+    <!-- Displaying posts -->
     <div class="row row-cols-1 row-cols-md-2 gap-5 justify-content-center">
-        {% for post in posts %}
+        {% for post in page_obj %}
             {% if post.isPublished %}
             <div class="card g-0 border-0 rounded-5 shadow blog-crd overflow-hidden">
                 <div class="card-body">
@@ -18,7 +19,30 @@
                 <img src="{{post.picture.url}}" class="card-img-bottom object-fit-cover h-50" alt="post image">
             </div>
             {% endif %}
+        {% empty %}
+        <p class="p-2 font-bold fs-4 purple">
+            No published posts yet..
+        </p>
         {% endfor %}
+    </div>
+
+    <!-- Pagination -->
+    <div class="d-flex flex-row justify-content-center my-5">
+        {% if page_obj.has_previous %}
+        <a href="{% url 'interests:displayInterestsView' %}{% querystring page=page_obj.previous_page_number %}"
+            class="p-2 purple fs-5 linkHover mx-2">
+            Previous
+        </a>
+        {% endif %}
+        <p class="p-2 font-bold fs-5">
+            Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}
+        </p>
+        {% if page_obj.has_next %}
+        <a href="{% url 'interests:displayInterestsView' %}{% querystring page=page_obj.next_page_number %}"
+            class="p-2 purple fs-5 linkHover mx-2">
+            Next
+        </a>
+        {% endif %}
     </div>
 </section>
 {% endblock %}

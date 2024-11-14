@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from django.http import HttpRequest
 from .forms import InterestForm
 from .models import Interest
+from django.core.paginator import Paginator
 
 # Add interest
 def addInterestView(request: HttpRequest):
@@ -67,6 +68,10 @@ def displayInterestsView(request: HttpRequest):
 
     interests = Interest.objects.all().order_by('-createdAt')
 
-    response = render(request, 'interests/displayInterests.html', context={'interests': interests})
+    paginator = Paginator(interests, 4)
+    pageNumber = request.GET.get('page', 1)
+    page_obj = paginator.get_page(pageNumber)
+
+    response = render(request, 'interests/displayInterests.html', context={'page_obj': page_obj})
 
     return response
