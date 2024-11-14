@@ -39,14 +39,14 @@ A personal website is website that represents you , your work , your career , yo
 Ghaliah Banounah
 
 ## Features List
-- Home page
-- 'Display All' page for posts, projects, and interests each
-- Cliking on the the item's title (either Project, Post, or Interest) will take you to details page
-- As the website owner, there's a dashboard to perform CRUD operations on your data
+- Home page.
+- 'Display All' page for posts, projects, and interests each.
+- Cliking on the the item's title (either Project, Post, or Interest) will take you to details page.
+- As the website owner, there's a dashboard to perform CRUD operations on your data.
 
 ## User Stories, Wireframes & UML links
-- (User stories document link here.)
-- (wireframe link here.)
+- User Stories on Trello: https://trello.com/invite/b/67310b799c1101c3657d7be7/ATTIe344dcc928cdcec4ccb2d577f8459e543CFC4FF9/user-stories
+- Figma wireframe: https://www.figma.com/design/c6j7yRBUg9p3yZ5ugaOzt7/GhaliahBanounah?node-id=0-1&m=dev&t=0mmjoCL1GALjnbA8-1
 - UML Link: https://lucid.app/lucidchart/6abdf705-d746-447d-8529-68b2692c2365/edit?viewport_loc=-306%2C777%2C3614%2C1431%2CHWEp-vi-RSFO&invitationId=inv_3cf03776-a447-4c74-97f8-e437880c9fe6
 
 
