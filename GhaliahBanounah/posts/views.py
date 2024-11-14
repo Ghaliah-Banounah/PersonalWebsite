@@ -19,6 +19,25 @@ def addPostView(request: HttpRequest):
         
     return response
 
+# Update post
+def updatePostView(request: HttpRequest, postid:int):
+
+    try:
+        post = Post.objects.get(pk=postid)
+    except Exception:
+        response = render(request, '404.html')
+    else:
+        response = render(request, 'posts/updatePost.html', context={"post":post})
+        if request.method == "POST":
+            #Update existing post
+            postData = PostForm(request.POST, request.FILES, instance=post)
+            if postData.is_valid():
+                postData.save()
+
+            response = redirect('dashboard:postsDashView')
+
+    return response
+
 def blogView(request: HttpRequest):
 
     posts = Post.objects.all().order_by('-publishedAt')
