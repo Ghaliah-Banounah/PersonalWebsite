@@ -38,6 +38,19 @@ def updatePostView(request: HttpRequest, postid:int):
 
     return response
 
+
+#Delete post view
+def deletePostView(request: HttpRequest, postid:int):
+
+    try:
+        post = Post.objects.get(pk=postid)
+    except Exception:
+        response = render(request, '404.html')
+    else:
+        post.delete()
+        response = redirect('dashboard:postsDashView')
+    return response
+
 def blogView(request: HttpRequest):
 
     posts = Post.objects.all().order_by('-publishedAt')

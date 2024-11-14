@@ -30,7 +30,6 @@
                 <th class="px-6 py-3 border-b-2 border-gray-300 text-left text-sm leading-4 text-violet-600 tracking-wider">
                     Created At
                 </th>
-                <th class="px-6 py-3 border-b-2 border-gray-300"></th>
             </tr>
         </thead>
         <tbody class="bg-gray-100">
@@ -53,16 +52,6 @@
                 </td>
                 <td class="px-6 py-4 border-b border-gray-500">
                     <p class="text-blue-900 text-sm leading-4">{{project.createdAt}}</p>
-                </td>
-                <td class="px-6 py-4 text-right border-b border-gray-500">
-                    <div class="flex gap-2">
-                        <a href="" class="my-1 px-2 py-2 border-red-500 border text-red-500 rounded transition duration-300 hover:bg-red-700 hover:text-white focus:outline-none">
-                            <i class="bi bi-trash3"></i>
-                        </a>
-                        <a href="" class="my-1 px-2 py-2 border-green-500 border text-green-500 rounded transition duration-300 hover:bg-green-700 hover:text-white focus:outline-none">
-                            <i class="bi bi-pencil-square"></i>
-                        </a>
-                    </div>
                 </td>
             </tr>
             {% endfor %}
@@ -88,7 +77,6 @@
                 <th class="px-6 py-3 border-b-2 border-gray-300 text-left text-sm leading-4 text-violet-600 tracking-wider">
                     Created At
                 </th>
-                <th class="px-6 py-3 border-b-2 border-gray-300"></th>
             </tr>
         </thead>
         <tbody class="bg-gray-100">
@@ -106,21 +94,12 @@
                 <td class="px-6 py-4 border-b border-gray-500">
                     <p class="text-blue-900 text-sm leading-4">{{interest.createdAt}}</p>
                 </td>
-                <td class="px-6 py-4 text-right border-b border-gray-500">
-                    <div class="flex gap-2">
-                        <a href="" class="my-1 px-2 py-2 border-red-500 border text-red-500 rounded transition duration-300 hover:bg-red-700 hover:text-white focus:outline-none">
-                            <i class="bi bi-trash3"></i>
-                        </a>
-                        <a href="" class="my-1 px-2 py-2 border-green-500 border text-green-500 rounded transition duration-300 hover:bg-green-700 hover:text-white focus:outline-none">
-                            <i class="bi bi-pencil-square"></i>
-                        </a>
-                    </div>
-                </td>
             </tr>
             {% endfor %}
         </tbody>
     </table>
 </div>
+
 <!-- Posts table -->
 <div class="container bg-white rounded-lg shadow-md my-12 pt-5 overflow-x-scroll">
     <h1 class="text-3xl font-bold mx-5">Posts</h1>
@@ -142,7 +121,6 @@
                 <th class="px-6 py-3 border-b-2 border-gray-300 text-left text-sm leading-4 text-violet-600 tracking-wider">
                     Created At
                 </th>
-                <th class="px-6 py-3 border-b-2 border-gray-300"></th>
             </tr>
         </thead>
         <tbody class="bg-gray-100">
@@ -162,16 +140,6 @@
                 </td> 
                 <td class="px-6 py-4 border-b border-gray-500">
                     <p class="text-blue-900 text-sm leading-4">{{post.publishedAt}}</p>
-                </td>
-                <td class="px-6 py-4 text-right border-b border-gray-500">
-                    <div class="flex gap-2">
-                        <a href="" class="my-1 px-2 py-2 border-red-500 border text-red-500 rounded transition duration-300 hover:bg-red-700 hover:text-white focus:outline-none">
-                            <i class="bi bi-trash3"></i>
-                        </a>
-                        <a href="" class="my-1 px-2 py-2 border-green-500 border text-green-500 rounded transition duration-300 hover:bg-green-700 hover:text-white focus:outline-none">
-                            <i class="bi bi-pencil-square"></i>
-                        </a>
-                    </div>
                 </td>
             </tr>
             {% endfor %}

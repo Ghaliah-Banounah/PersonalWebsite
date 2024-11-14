@@ -38,6 +38,19 @@ def updateProjectView(request: HttpRequest, projId:int):
 
     return response
 
+
+#Delete project view
+def deleteProjectView(request: HttpRequest, projId:int):
+
+    try:
+        project = Project.objects.get(pk=projId)
+    except Exception:
+        response = render(request, '404.html')
+    else:
+        project.delete()
+        response = redirect('dashboard:projectsDashView')
+    return response
+
 def displayProjectsView(request: HttpRequest):
 
     projects = Project.objects.all().order_by('-createdAt')

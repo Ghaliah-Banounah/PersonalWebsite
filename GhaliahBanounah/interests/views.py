@@ -38,6 +38,18 @@ def updateInterestView(request: HttpRequest, interId:int):
 
     return response
 
+#Delete interest view
+def deleteInterestView(request: HttpRequest, interId:int):
+
+    try:
+        interest = Interest.objects.get(pk=interId)
+    except Exception:
+        response = render(request, '404.html')
+    else:
+        interest.delete()
+        response = redirect('dashboard:interestsDashView')
+    return response
+
 def displayInterestsView(request: HttpRequest):
 
     interests = Interest.objects.all().order_by('-createdAt')
