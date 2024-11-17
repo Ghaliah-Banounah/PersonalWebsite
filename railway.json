@@ -4,6 +4,6 @@
         "builder": "NIXPACKS"
     },
     "deploy": {
-        "startCommand": "cd GhaliahBanounah && py manage.py migrate && py manage.py collectstatic --noinput && gunicorn GhaliahBanounah.wsgi"
+        "startCommand": "cd GhaliahBanounah && python manage.py migrate && python manage.py collectstatic --noinput && gunicorn GhaliahBanounah.wsgi"
     }
 }
