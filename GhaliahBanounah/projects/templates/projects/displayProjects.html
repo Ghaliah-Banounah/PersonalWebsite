@@ -13,7 +13,7 @@
             <div class="card-body">
                 <a href="{% url 'projects:projectDetailsView' project.id %}" class="card-title h3 fw-bold purple-sub">{{project.title}}</a>
                 <p class="card-text text-start mt-4">{{project.description}}</p>
-                <p class="card-text text-start small">Added at: {{project.createdAt}}</p>
+                <p class="card-text text-start small purple-sub">Added at: {{project.createdAt}}</p>
             </div>
             <img src="{{project.picture.url}}" class="card-img-bottom object-fit-cover h-50" alt="post image">
         </div>

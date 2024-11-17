@@ -14,7 +14,7 @@
                 <div class="card-body">
                     <a href="{% url 'posts:postDetailsView' post.id %}" class="card-title h3 fw-bold purple-sub">{{post.title}}</a>
                     <p class="card-text text-start mt-4">{{post.content}}</p>
-                    <p class="card-text text-start small">Published at: {{post.publishedAt}}</p>
+                    <p class="card-text text-start small purple-sub">Published at: {{post.publishedAt}}</p>
                 </div>
                 <img src="{{post.picture.url}}" class="card-img-bottom object-fit-cover h-50" alt="post image">
             </div>

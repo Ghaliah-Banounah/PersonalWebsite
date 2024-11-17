@@ -12,7 +12,7 @@
     <div class="row row-cols-1 row-cols-lg-2 justify-content-center gap-5">
         <!-- Contact Info -->
         <div class="col-10 col-lg-5 align-content-center text-start py-3 px-4 shadow rounded-5 frm">
-            <h2 class="fw-bold text-center">Contact Information</h2>
+            <h2 class="fw-bold text-center purple">Contact Information</h2>
             <div class="py-3 px-4">
                 <div class="d-flex flex-row py-0 gap-2 mt-4">
                     <i class="text-center material-symbols-outlined">
@@ -70,7 +70,7 @@
             <i class="text-center material-symbols-outlined">
                 mail
             </i>
-            <h2 class="p-2 m-2 py-lg-5 m-lg-5" >Your message was sent successfully</h2>
+            <h2 class="p-2 m-2 py-lg-5 m-lg-5 purple">Your message was sent successfully</h2>
             <a href="{% url 'main:homeView' %}" class="col-6 btn border-2 {% if 'mode' in request.COOKIES and request.COOKIES.mode == 'dark' %} btn-outline-light {% else %} btn-outline-dark {% endif %}">
                 Go Back Home
             </a>
@@ -78,13 +78,13 @@
             <form class="form-floating d-flex flex-column text-start gap-2 mt-3 px-2 needs-validation"
                 action="{% url 'main:contactView' %}" method="post" enctype="multipart/form-data" novalidate>
                 {% csrf_token %}
-                <i class="text-center material-symbols-outlined">
+                <i class="text-center material-symbols-outlined purple">
                     mail
                 </i>
-                <h3 class="fw-bold text-center">Or send a message</h3>
+                <h3 class="fw-bold text-center purple">Or send a message</h3>
                 <div class="d-flex justify-content-evenly gap-2">
                     <div class="my-3 flex-fill">
-                        <label for="fname" class="lighttext">First Name</label>
+                        <label for="fname">First Name</label>
                         <input type="text" class="form-control focus-ring focus-ring-secondary"
                             name="fname" id="fname" required minlength="3" maxlength="256">
                         <div class="invalid-feedback">
@@ -92,7 +92,7 @@
                         </div>
                     </div>
                     <div class="my-3 flex-fill">
-                        <label for="lname" class="lighttext">Last Name</label>
+                        <label for="lname">Last Name</label>
                         <input type="text" class="form-control focus-ring focus-ring-secondary"
                             name="lname" id="lname" required minlength="3" maxlength="256">
                         <div class="invalid-feedback">
@@ -101,7 +101,7 @@
                     </div>
                 </div>
                 <div class="my-3">
-                    <label for="email" class="lighttext">Email address</label>
+                    <label for="email">Email address</label>
                     <input type="email" class="form-control" id="email" placeholder="name@example.com"
                         name="email" required maxlength="254">
                     <div class="invalid-feedback">
