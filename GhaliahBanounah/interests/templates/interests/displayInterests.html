@@ -12,8 +12,8 @@
         <div class="card g-0 border-0 rounded-5 shadow sm-crd overflow-hidden">
             <div class="card-body">
                 <a href="{% url 'interests:interestDetailsView' interest.id %}" class="card-title h3 fw-bold purple-sub">{{interest.title}}</a>
-                <p class="card-text text-start mt-4">{{interest.description}}</p>
-                <p class="card-text text-start small purple-sub">Added at: {{interest.createdAt}}</p>
+                <p class="card-text text-start mt-4"><span class="fw-bold purple-sub">Description:</span> {{interest.description}}</p>
+                <p class="card-text text-start small"><span class="purple-sub">Added at:</span> {{interest.createdAt}}</p>
             </div>
             <img src="{{interest.picture.url}}" class="card-img-bottom object-fit-cover h-50" alt="post image">
         </div>
