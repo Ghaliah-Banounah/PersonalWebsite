@@ -548,7 +548,7 @@
     height: fit-content;
     animation:
         typing 3s steps(20, end) forwards,
-        cursor .4s step-end 6 alternate;
+        cursor .4s step-end 4 alternate;
 }
 
 .typed-out-2 {
